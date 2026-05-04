@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Swith Merchan Díaz — IT Manager & AI Strategist</title>
+<meta name="description" content="Líder de Tecnología con 27 años de trayectoria. Transformación digital, IA aplicada y estrategia tecnológica para entornos multinacionales." />
+<meta name="author" content="Swith Merchan Díaz" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Swith Merchan Díaz — IT Manager & AI Strategist" />
+<meta property="og:description" content="Líder de Tecnología con 27 años de trayectoria. Transformación digital, IA aplicada y estrategia tecnológica para entornos multinacionales." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0c;
+  --bg-elevated: #111114;
+  --bg-card: #15151a;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.16);
+  --text: #f5f5f7;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --accent: #fbbf24;
+  --accent-muted: rgba(251, 191, 36, 0.12);
+  --accent-secondary: #60a5fa;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Grid background */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+img { max-width: 100%; display: block; }
+
+/* === NAVIGATION === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 12, 0.7);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  position: relative;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.lang-toggle {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* === SECTIONS === */
+section {
+  position: relative;
+  z-index: 2;
+  padding: 120px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.05); }
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(54px, 9vw, 128px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: rise 1s ease 0.2s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 720px;
+  line-height: 1.5;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: rise 1s ease 0.4s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: rise 1s ease 0.6s forwards;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--text);
+  border-color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.2);
+}
+
+.btn:hover {
+  border-color: var(--text);
+  background: rgba(255,255,255,0.04);
+}
+
+.btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.hero-credentials {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  opacity: 0;
+  animation: rise 1s ease 0.8s forwards;
+}
+
+.cred-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cred-value {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.cred-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* === ABOUT === */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-portrait {
+  position: sticky;
+  top: 120px;
+  aspect-ratio: 4/5;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(1.05) brightness(0.95);
+  transition: filter 0.6s ease, transform 0.8s ease;
+}
+
+.about-portrait:hover .portrait-img {
+  filter: grayscale(0%) contrast(1.05) brightness(1);
+  transform: scale(1.02);
+}
+
+.portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    transparent 60%,
+    rgba(10, 10, 12, 0.4) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portrait-frame-accent {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portrait-frame-accent::before {
+  content: '';
+  width: 12px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.portrait-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a22 0%, #0a0a0c 100%);
+  font-family: var(--serif);
+  font-size: 120px;
+  font-weight: 300;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.about-content p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* === IMPACT METRICS === */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.metric-card {
+  position: relative;
+  padding: 40px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.metric-card:hover::before {
+  opacity: 1;
+}
+
+.metric-number {
+  font-family: var(--serif);
+  font-size: 88px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.metric-number .unit {
+  font-size: 48px;
+  color: var(--accent);
+}
+
+.metric-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.metric-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* === EXPERTISE === */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 64px;
+}
+
+.expertise-item {
+  background: var(--bg);
+  padding: 40px 32px;
+  transition: background 0.3s ease;
+  cursor: default;
+}
+
+.expertise-item:hover {
+  background: var(--bg-elevated);
+}
+
+.expertise-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 24px;
+  color: var(--accent);
+}
+
+.expertise-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.expertise-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.expertise-tags {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-muted);
+}
+
+/* === EXPERIENCE TIMELINE === */
+.timeline {
+  margin-top: 64px;
+  position: relative;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:last-child { border-bottom: 1px solid var(--border); }
+
+.timeline-item:hover {
+  padding-left: 24px;
+}
+
+.timeline-period {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.timeline-period .current {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.timeline-content h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.timeline-company {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* === EDUCATION === */
+.education-list {
+  margin-top: 48px;
+  display: grid;
+  gap: 16px;
+}
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.edu-degree {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.edu-school {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.edu-year {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* === CONTACT === */
+.contact-section {
+  text-align: center;
+  padding: 160px 40px;
+}
+
+.contact-headline {
+  font-family: var(--serif);
+  font-size: clamp(44px, 6vw, 88px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-headline em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.contact-channels {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 40px;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 20px; }
+  .nav-links a:not(.lang-toggle) { display: none; }
+  section { padding: 80px 20px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-portrait { position: relative; top: 0; max-width: 320px; margin: 0 auto; }
+  .metrics-grid { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; gap: 12px; }
+  .edu-item { grid-template-columns: 1fr; gap: 8px; }
+  .hero-credentials { grid-template-columns: 1fr 1fr; }
+}
+
+/* === Scroll-triggered fade === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === FEATURED RESEARCH PROJECT === */
+.research-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(251, 191, 36, 0.02) 50%, transparent 100%);
+  position: relative;
+}
+
+.research-card {
+  margin-top: 64px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.research-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 32px 64px -12px rgba(0,0,0,0.4);
+}
+
+.research-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--accent), transparent);
+}
+
+.research-header {
+  padding: 48px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: start;
+}
+
+.research-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 8px 14px;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 100px;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.research-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.research-affiliation {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.research-affiliation span:not(:last-child)::after {
+  content: '·';
+  margin-left: 8px;
+  color: var(--text-dim);
+}
+
+.research-badge {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent);
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+}
+
+.research-badge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px dashed rgba(251, 191, 36, 0.3);
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.research-body {
+  padding: 48px;
+}
+
+.research-summary {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  max-width: 780px;
+}
+
+.research-summary strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.research-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.research-meta-item {
+  background: var(--bg);
+  padding: 24px;
+}
+
+.research-meta-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.research-meta-value {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.research-meta-value em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.research-pillars {
+  margin-top: 16px;
+}
+
+.research-pillars-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.research-pillars-title::before,
+.research-pillars-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.pillar {
+  padding: 24px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.pillar:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: var(--bg-card);
+}
+
+.pillar-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.pillar-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.pillar-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.research-impact-strip {
+  margin-top: 48px;
+  padding: 32px 48px;
+  margin-left: -48px;
+  margin-right: -48px;
+  margin-bottom: -48px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.04) 0%, transparent 100%);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+}
+
+.impact-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.impact-stat-value {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.impact-stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .research-header,
+  .research-body { padding: 32px 24px; }
+  .research-header { grid-template-columns: 1fr; }
+  .research-impact-strip {
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-bottom: -32px;
+    padding: 24px;
+  }
+}
+
+/* === Language switch === */
+[data-lang="en"] .lang-es,
+[data-lang="es"] .lang-en {
+  display: none;
+}
+
+</style>
+</head>
+<body data-lang="es">
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Swith <span>M.</span></a>
+    <div class="nav-links">
+      <a href="#about" class="lang-es">Sobre mí</a>
+      <a href="#about" class="lang-en">About</a>
+      <a href="#impact" class="lang-es">Impacto</a>
+      <a href="#impact" class="lang-en">Impact</a>
+      <a href="#expertise" class="lang-es">Especialidad</a>
+      <a href="#expertise" class="lang-en">Expertise</a>
+      <a href="#experience" class="lang-es">Trayectoria</a>
+      <a href="#experience" class="lang-en">Career</a>
+      <a href="#research" class="lang-es">Investigación</a>
+      <a href="#research" class="lang-en">Research</a>
+      <a href="#contact" class="lang-es">Contacto</a>
+      <a href="#contact" class="lang-en">Contact</a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-meta">
+    <span class="hero-status">
+      <span class="status-dot"></span>
+      <span class="lang-es">Bogotá, Colombia · Disponible para conversaciones</span>
+      <span class="lang-en">Bogotá, Colombia · Open to conversations</span>
+    </span>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="lang-es">
+      Tecnología que <em>transforma</em><br>el negocio.
+    </span>
+    <span class="lang-en">
+      Technology that <em>transforms</em><br>business.
+    </span>
+  </h1>
+
+  <p class="hero-subtitle">
+    <span class="lang-es">
+      Soy <strong>Swith Merchan</strong>, líder de tecnología con 27 años orquestando transformación digital, ciberseguridad e inteligencia artificial aplicada en entornos multinacionales.
+    </span>
+    <span class="lang-en">
+      I'm <strong>Swith Merchan</strong>, technology leader with 27 years orchestrating digital transformation, cybersecurity, and applied AI across multinational environments.
+    </span>
+  </p>
+
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">
+      <span class="lang-es">Hablemos</span>
+      <span class="lang-en">Let's talk</span>
+      <span class="btn-arrow">→</span>
+    </a>
+    <a href="https://www.linkedin.com/in/swithmerchan-tecnologia" target="_blank" rel="noopener" class="btn">
+      LinkedIn <span class="btn-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="hero-credentials">
+    <div class="cred-item">
+      <span class="cred-value">27<span style="color:var(--text-dim);font-size:18px;margin-left:4px;">yr</span></span>
+      <span class="cred-label">
+        <span class="lang-es">Experiencia</span>
+        <span class="lang-en">Experience</span>
+      </span>
+    </div>
+    <div class="cred-item">
+      <span class="cred-value">MSc</span>
+      <span class="cred-label">
+        <span class="lang-es">IA & Automatización</span>
+        <span class="lang-en">AI & Automation</span>
+      </span>
+    </div>
+    <div class="cred-item">
+      <span class="cred-value">LATAM</span>
+      <span class="cred-label">
+        <span class="lang-es">Cobertura regional</span>
+        <span class="lang-en">Regional reach</span>
+      </span>
+    </div>
+    <div class="cred-item">
+      <span class="cred-value">€<span style="color:var(--text-dim);font-size:18px;margin-left:4px;">/$</span></span>
+      <span class="cred-label">
+        <span class="lang-es">Casas matriz EU/US</span>
+        <span class="lang-en">EU/US HQ exposure</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">
+    <span class="lang-es">01 — Sobre mí</span>
+    <span class="lang-en">01 — About</span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-portrait">
+      <img src="portrait.jpg" alt="Swith Merchan Díaz" class="portrait-img" loading="lazy" />
+      <div class="portrait-overlay"></div>
+      <div class="portrait-frame-accent">
+        <span class="lang-es">Bogotá · 2026</span>
+        <span class="lang-en">Bogotá · 2026</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <h2 class="section-title">
+        <span class="lang-es">Estrategia tecnológica con <em style="color:var(--accent);font-style:italic">resultados medibles</em>.</span>
+        <span class="lang-en">Tech strategy with <em style="color:var(--accent);font-style:italic">measurable outcomes</em>.</span>
+      </h2>
+
+      <p class="lang-es">
+        Lidero la <strong>estrategia tecnológica de Bergé Colombia</strong>, articulando la operación con la casa matriz en España. Mi alcance abarca infraestructura nacional, ciberseguridad, gobierno de datos y proyectos de automatización e IA orientados a la eficiencia operativa.
+      </p>
+      <p class="lang-en">
+        I lead the <strong>tech strategy of Bergé Colombia</strong>, articulating local operations with HQ in Spain. My scope spans national infrastructure, cybersecurity, data governance, and AI/automation projects driving operational efficiency.
+      </p>
+
+      <p class="lang-es">
+        Mi enfoque combina arquitectura tecnológica, gestión estratégica de proveedores y diseño de soluciones con visión de negocio. <strong>No vendo tecnología; resuelvo problemas operativos con tecnología</strong>.
+      </p>
+      <p class="lang-en">
+        My approach blends architecture, strategic vendor management, and business-driven solution design. <strong>I don't sell technology; I solve operational problems with technology</strong>.
+      </p>
+
+      <p class="lang-es">
+        He liderado iniciativas que han movido la aguja: rediseños de red con reducciones radicales de incidencias, migraciones de Data Center con ahorros operativos de doble dígito, e implementaciones de RPA e IA que liberan a las personas de tareas repetitivas.
+      </p>
+      <p class="lang-en">
+        I have led initiatives that move the needle: network redesigns with sharp incident reductions, Data Center migrations with double-digit cost savings, and RPA + AI implementations that free people from repetitive work.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT METRICS -->
+<section id="impact">
+  <div class="section-tag">
+    <span class="lang-es">02 — Impacto</span>
+    <span class="lang-en">02 — Impact</span>
+  </div>
+
+  <h2 class="section-title">
+    <span class="lang-es">Lo que <em style="color:var(--accent);font-style:italic">se ha entregado</em>.</span>
+    <span class="lang-en">What has <em style="color:var(--accent);font-style:italic">been delivered</em>.</span>
+  </h2>
+  <p class="section-subtitle">
+    <span class="lang-es">Tres ejes de impacto medible en mi rol actual y previo.</span>
+    <span class="lang-en">Three axes of measurable impact in current and previous roles.</span>
+  </p>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-number">90<span class="unit">%</span></div>
+      <div class="metric-label">
+        <span class="lang-es">Reducción de incidencias</span>
+        <span class="lang-en">Incident reduction</span>
+      </div>
+      <p class="metric-desc">
+        <span class="lang-es">Rediseño integral de la red nacional, eliminando caídas de servicio recurrentes.</span>
+        <span class="lang-en">Full national network redesign, eliminating recurring service outages.</span>
+      </p>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-number">46<span class="unit">%</span></div>
+      <div class="metric-label">
+        <span class="lang-es">Ahorro operativo</span>
+        <span class="lang-en">Operational savings</span>
+      </div>
+      <p class="metric-desc">
+        <span class="lang-es">Migración de Data Center, servidores y redes a la infraestructura corporativa global.</span>
+        <span class="lang-en">Data Center, server and network migration to global corporate infrastructure.</span>
+      </p>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-number">60<span class="unit">%</span></div>
+      <div class="metric-label">
+        <span class="lang-es">Tareas manuales eliminadas</span>
+        <span class="lang-en">Manual work removed</span>
+      </div>
+      <p class="metric-desc">
+        <span class="lang-es">Implementación de RPA + IA en áreas de servicio al cliente, con modelos predictivos de fallos.</span>
+        <span class="lang-en">RPA + AI deployment across customer service, including predictive failure models.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-tag">
+    <span class="lang-es">03 — Especialidad</span>
+    <span class="lang-en">03 — Expertise</span>
+  </div>
+
+  <h2 class="section-title">
+    <span class="lang-es">Áreas donde <em style="color:var(--accent);font-style:italic">opero con profundidad</em>.</span>
+    <span class="lang-en">Where I operate <em style="color:var(--accent);font-style:italic">in depth</em>.</span>
+  </h2>
+
+  <div class="expertise-grid">
+    <div class="expertise-item">
+      <svg class="expertise-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+      </svg>
+      <h3 class="expertise-title">
+        <span class="lang-es">Infraestructura & Cloud</span>
+        <span class="lang-en">Infrastructure & Cloud</span>
+      </h3>
+      <p class="expertise-desc">
+        <span class="lang-es">Diseño y operación de redes WAN/LAN, virtualización, migración a nube y arquitectura híbrida.</span>
+        <span class="lang-en">WAN/LAN design and ops, virtualization, cloud migration, and hybrid architecture.</span>
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">Azure</span>
+        <span class="tag">M365</span>
+        <span class="tag">SD-WAN</span>
+      </div>
+    </div>
+
+    <div class="expertise-item">
+      <svg class="expertise-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <h3 class="expertise-title">
+        <span class="lang-es">Ciberseguridad</span>
+        <span class="lang-en">Cybersecurity</span>
+      </h3>
+      <p class="expertise-desc">
+        <span class="lang-es">Continuidad operativa, gestión de vulnerabilidades, cumplimiento e incidentes.</span>
+        <span class="lang-en">Business continuity, vulnerability management, compliance, and incident response.</span>
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">SOC</span>
+        <span class="tag">Endpoint</span>
+        <span class="tag">ISO 27001</span>
+      </div>
+    </div>
+
+    <div class="expertise-item">
+      <svg class="expertise-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+      </svg>
+      <h3 class="expertise-title">
+        <span class="lang-es">RPA & Inteligencia Artificial</span>
+        <span class="lang-en">RPA & Artificial Intelligence</span>
+      </h3>
+      <p class="expertise-desc">
+        <span class="lang-es">Automatización de procesos y modelos de IA aplicados a operación, predicción y NLP.</span>
+        <span class="lang-en">Process automation and applied AI models for operations, prediction, and NLP.</span>
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">UiPath</span>
+        <span class="tag">BERT</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="expertise-item">
+      <svg class="expertise-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+      </svg>
+      <h3 class="expertise-title">
+        <span class="lang-es">Gobierno & Integración de Datos</span>
+        <span class="lang-en">Data Governance & Integration</span>
+      </h3>
+      <p class="expertise-desc">
+        <span class="lang-es">Arquitectura de datos, ETL, integraciones empresariales y gobierno corporativo.</span>
+        <span class="lang-en">Data architecture, ETL, enterprise integrations, and corporate governance.</span>
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">Talend</span>
+        <span class="tag">Mulesoft</span>
+        <span class="tag">SQL</span>
+      </div>
+    </div>
+
+    <div class="expertise-item">
+      <svg class="expertise-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/>
+      </svg>
+      <h3 class="expertise-title">
+        <span class="lang-es">Estrategia & Liderazgo</span>
+        <span class="lang-en">Strategy & Leadership</span>
+      </h3>
+      <p class="expertise-desc">
+        <span class="lang-es">Roadmaps tecnológicos, gestión de portafolio, equipos LATAM y articulación con casa matriz.</span>
+        <span class="lang-en">Tech roadmaps, portfolio management, LATAM teams, and HQ articulation.</span>
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">OKRs</span>
+        <span class="tag">Agile</span>
+        <span class="tag">ITIL</span>
+      </div>
+    </div>
+
+    <div class="expertise-item">
+      <svg class="expertise-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/>
+      </svg>
+      <h3 class="expertise-title">
+        <span class="lang-es">Gestión de Proveedores</span>
+        <span class="lang-en">Vendor Management</span>
+      </h3>
+      <p class="expertise-desc">
+        <span class="lang-es">Negociación, SLAs, scoring estratégico y optimización de portafolio de proveedores.</span>
+        <span class="lang-en">Negotiation, SLAs, strategic scoring, and vendor portfolio optimization.</span>
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">SLA</span>
+        <span class="tag">RFP</span>
+        <span class="tag">TCO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-tag">
+    <span class="lang-es">04 — Trayectoria</span>
+    <span class="lang-en">04 — Career</span>
+  </div>
+
+  <h2 class="section-title">
+    <span class="lang-es">Una <em style="color:var(--accent);font-style:italic">construcción de 27 años</em>.</span>
+    <span class="lang-en">A <em style="color:var(--accent);font-style:italic">27-year build</em>.</span>
+  </h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-period">
+        2024 — <span class="current">
+          <span class="lang-es">Actual</span>
+          <span class="lang-en">Present</span>
+        </span>
+      </div>
+      <div class="timeline-content">
+        <h3>IT Manager Colombia</h3>
+        <div class="timeline-company">Bergé · Multinacional Logística (España)</div>
+        <p class="timeline-desc">
+          <span class="lang-es">Lidero la estrategia y operación tecnológica nacional, articulada con la casa matriz en España. Responsable de redes, infraestructura, ciberseguridad, gobierno de datos, automatización y portafolio de proveedores estratégicos.</span>
+          <span class="lang-en">Lead the national tech strategy and operations, aligned with HQ in Spain. Responsible for networks, infrastructure, cybersecurity, data governance, automation, and strategic vendor portfolio.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2012 — 2024</div>
+      <div class="timeline-content">
+        <h3>
+          <span class="lang-es">IT Manager LATAM — Proyecto Vitro</span>
+          <span class="lang-en">IT Manager LATAM — Vitro Account</span>
+        </h3>
+        <div class="timeline-company">Excelia · Consultoría Tecnológica</div>
+        <p class="timeline-desc">
+          <span class="lang-es">Lideré Field Services LATAM brindando soporte integral, ciberseguridad de endpoints y resolución de incidentes en equipos PLC industriales. Implementación de infraestructura en nuevas plantas y oficinas, fortaleciendo la postura tecnológica industrial y administrativa.</span>
+          <span class="lang-en">Led LATAM Field Services covering integrated support, endpoint security, and PLC industrial issue resolution. Infrastructure deployment for new plants and offices, strengthening industrial and admin tech posture.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2023</div>
+      <div class="timeline-content">
+        <h3>
+          <span class="lang-es">Analista de Inteligencia Artificial</span>
+          <span class="lang-en">AI Analyst</span>
+        </h3>
+        <div class="timeline-company">Lavenir · Ministerio del Trabajo (Colombia)</div>
+        <p class="timeline-desc">
+          <span class="lang-es">Optimicé modelos de IA con foco en afinación del modelo BERT para contextos lingüísticos colombianos. Desarrollo de modelos para evaluación de trayectoria profesional y técnicas avanzadas de NLP para selección de candidatos.</span>
+          <span class="lang-en">Optimized AI models with a focus on BERT fine-tuning for Colombian linguistic contexts. Developed candidate-trajectory evaluation models and advanced NLP techniques for candidate selection.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2009 — 2012</div>
+      <div class="timeline-content">
+        <h3>IT Field Services Manager</h3>
+        <div class="timeline-company">Getronics Colombia · KPN</div>
+        <p class="timeline-desc">
+          <span class="lang-es">Supervisión de entrega y reparación de equipos garantizando recuperación de respaldos y continuidad operativa bancaria. Gestión de laboratorio de reparación y planificación de mantenimientos preventivos.</span>
+          <span class="lang-en">Oversaw equipment delivery and repair, ensuring backup recovery and banking continuity. Repair lab operations and preventive maintenance planning.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2007 — 2009</div>
+      <div class="timeline-content">
+        <h3>
+          <span class="lang-es">Roles técnicos & Service Desk</span>
+          <span class="lang-en">Technical roles & Service Desk</span>
+        </h3>
+        <div class="timeline-company">Getronics · Colsof S.A.S</div>
+        <p class="timeline-desc">
+          <span class="lang-es">Administración de usuarios y accesos vía Active Directory, soporte a usuarios finales y operación de SLAs en entornos corporativos críticos. Base sólida que sustenta dos décadas de evolución hacia roles de liderazgo tecnológico.</span>
+          <span class="lang-en">User and access administration via Active Directory, end-user support, and SLA operations in critical corporate environments. The foundation that underpins two decades of growth into tech leadership.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH / FEATURED PROJECT -->
+<section id="research" class="research-section">
+  <div class="section-tag">
+    <span class="lang-es">05 — Investigación & Política Pública</span>
+    <span class="lang-en">05 — Research & Public Policy</span>
+  </div>
+
+  <h2 class="section-title">
+    <span class="lang-es">Cuando la tecnología se pone al servicio del <em style="color:var(--accent);font-style:italic">interés público</em>.</span>
+    <span class="lang-en">When technology serves the <em style="color:var(--accent);font-style:italic">public interest</em>.</span>
+  </h2>
+  <p class="section-subtitle">
+    <span class="lang-es">Proyecto de investigación aplicada en curso, articulado con misión nacional y normativa vigente.</span>
+    <span class="lang-en">Active applied research project, articulated with a national mission and current regulation.</span>
+  </p>
+
+  <div class="research-card">
+    <div class="research-header">
+      <div>
+        <div class="research-status">
+          <span class="status-dot" style="background:var(--accent);box-shadow:0 0 0 4px rgba(251,191,36,0.15);"></span>
+          <span class="lang-es">En postulación · Convocatoria 975 — Minciencias</span>
+          <span class="lang-en">Under review · Call 975 — MinScience Colombia</span>
+        </div>
+
+        <h3 class="research-title">
+          <span class="lang-es">Framework <em style="color:var(--accent);font-style:italic">GDS-Rural</em>: gobierno de datos e IA para salud digital en municipios rurales de Cundinamarca.</span>
+          <span class="lang-en">The <em style="color:var(--accent);font-style:italic">GDS-Rural</em> framework: data governance and AI for digital health in rural municipalities of Cundinamarca.</span>
+        </h3>
+
+        <div class="research-affiliation">
+          <span>
+            <span class="lang-es">Maestría en Gerencia de TI</span>
+            <span class="lang-en">MSc IT Management</span>
+          </span>
+          <span>Universidad de los Andes</span>
+          <span>
+            <span class="lang-es">Misión 4 — Soberanía sanitaria</span>
+            <span class="lang-en">Mission 4 — Health sovereignty</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="research-badge">
+        <span>
+          <span class="lang-es">Beca<br>Minciencias<br>2026</span>
+          <span class="lang-en">MinScience<br>Grant<br>2026</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="research-body">
+      <p class="research-summary">
+        <span class="lang-es">
+          Diseño y validación de un <strong>framework operativo de gobierno de datos e IA</strong> para que las instituciones de salud de primer nivel en municipios rurales — empezando por Fómeque y Choachí — puedan implementar telemedicina sostenible bajo el Decreto 0351 de 2025. La propuesta articula <strong>diagnóstico AS-IS, diseño TO-BE, piloto con IA para triaje remoto y transferencia a política pública</strong>, con un modelo de sostenibilidad basado en cohortes SENA que convierte la cuota patronal de aprendizaje en un activo del proyecto.
+        </span>
+        <span class="lang-en">
+          Design and validation of an <strong>operational data governance and AI framework</strong> so that primary-care health institutions in rural municipalities — starting with Fómeque and Choachí — can deploy sustainable telemedicine under Decree 0351/2025. The proposal articulates <strong>AS-IS diagnosis, TO-BE design, AI pilot for remote triage, and transfer to public policy</strong>, with a sustainability model built on SENA cohorts that turns the legal apprenticeship contribution into a project asset.
+        </span>
+      </p>
+
+      <div class="research-meta-grid">
+        <div class="research-meta-item">
+          <div class="research-meta-label">
+            <span class="lang-es">Duración</span>
+            <span class="lang-en">Duration</span>
+          </div>
+          <div class="research-meta-value">24 <em>meses</em></div>
+        </div>
+        <div class="research-meta-item">
+          <div class="research-meta-label">
+            <span class="lang-es">Territorio</span>
+            <span class="lang-en">Territory</span>
+          </div>
+          <div class="research-meta-value">
+            <span class="lang-es">Cundinamarca <em>rural</em></span>
+            <span class="lang-en">Rural <em>Cundinamarca</em></span>
+          </div>
+        </div>
+        <div class="research-meta-item">
+          <div class="research-meta-label">
+            <span class="lang-es">Actores articulados</span>
+            <span class="lang-en">Articulated actors</span>
+          </div>
+          <div class="research-meta-value">MinSalud · MinTIC · ART · DANE</div>
+        </div>
+        <div class="research-meta-item">
+          <div class="research-meta-label">
+            <span class="lang-es">Marco normativo</span>
+            <span class="lang-en">Regulatory frame</span>
+          </div>
+          <div class="research-meta-value">
+            <span class="lang-es">Decreto <em>0351/2025</em></span>
+            <span class="lang-en">Decree <em>0351/2025</em></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-pillars">
+        <div class="research-pillars-title">
+          <span class="lang-es">Cuatro fases · Una misma cadena de valor</span>
+          <span class="lang-en">Four phases · One value chain</span>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <h4 class="pillar-title">
+              <span class="lang-es">Diagnóstico AS-IS</span>
+              <span class="lang-en">AS-IS Diagnosis</span>
+            </h4>
+            <p class="pillar-desc">
+              <span class="lang-es">Madurez digital y gobierno de datos en 3-5 ESE rurales con instrumentos OPS/MinTIC adaptados.</span>
+              <span class="lang-en">Digital maturity and data governance assessment in 3-5 rural health institutions, with adapted OPS/MinTIC instruments.</span>
+            </p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">02</span>
+            <h4 class="pillar-title">
+              <span class="lang-es">Diseño TO-BE</span>
+              <span class="lang-en">TO-BE Design</span>
+            </h4>
+            <p class="pillar-desc">
+              <span class="lang-es">Arquitectura de datos, protocolos de seguridad y herramienta de autodiagnóstico de libre acceso.</span>
+              <span class="lang-en">Data architecture, security protocols, and an open-access self-assessment tool.</span>
+            </p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">03</span>
+            <h4 class="pillar-title">
+              <span class="lang-es">Piloto IA</span>
+              <span class="lang-en">AI Pilot</span>
+            </h4>
+            <p class="pillar-desc">
+              <span class="lang-es">Modelo de clasificación supervisada para triaje remoto, validado en una ESE de primer nivel.</span>
+              <span class="lang-en">Supervised classification model for remote triage, validated at a primary-care institution.</span>
+            </p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">04</span>
+            <h4 class="pillar-title">
+              <span class="lang-es">Transferencia</span>
+              <span class="lang-en">Transfer</span>
+            </h4>
+            <p class="pillar-desc">
+              <span class="lang-es">Manual de replicación, artículo indexado y entrega formal a MinSalud, MinTIC y ART.</span>
+              <span class="lang-en">Replication manual, indexed paper, and formal delivery to MinSalud, MinTIC, and ART.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-impact-strip">
+        <div class="impact-stat">
+          <span class="impact-stat-value">170</span>
+          <span class="impact-stat-label">
+            <span class="lang-es">Municipios PDET potenciales</span>
+            <span class="lang-en">Potential PDET towns</span>
+          </span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat-value">15.7×</span>
+          <span class="impact-stat-label">
+            <span class="lang-es">ROI conservador estimado</span>
+            <span class="lang-en">Conservative estimated ROI</span>
+          </span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat-value">~91%</span>
+          <span class="impact-stat-label">
+            <span class="lang-es">Reducción costo familiar por consulta</span>
+            <span class="lang-en">Family cost reduction per visit</span>
+          </span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat-value">CC BY-SA</span>
+          <span class="impact-stat-label">
+            <span class="lang-es">Modelo abierto y replicable</span>
+            <span class="lang-en">Open and replicable model</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-tag">
+    <span class="lang-es">06 — Formación</span>
+    <span class="lang-en">06 — Education</span>
+  </div>
+
+  <h2 class="section-title">
+    <span class="lang-es">Aprendizaje <em style="color:var(--accent);font-style:italic">continuo</em>.</span>
+    <span class="lang-en">Continuous <em style="color:var(--accent);font-style:italic">learning</em>.</span>
+  </h2>
+
+  <div class="education-list">
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">
+          <span class="lang-es">Magíster en Inteligencia Artificial y Automatización</span>
+          <span class="lang-en">MSc Artificial Intelligence & Automation</span>
+        </div>
+        <div class="edu-school">Universidad Internacional de La Rioja · UNIR (España)</div>
+      </div>
+      <div class="edu-year">2024</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">
+          <span class="lang-es">Programa de Estrategia y Sostenibilidad</span>
+          <span class="lang-en">Strategy & Sustainability Program</span>
+        </div>
+        <div class="edu-school">INALDE Business School · Universidad de La Sabana</div>
+      </div>
+      <div class="edu-year">2023</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">
+          <span class="lang-es">Ingeniería de Software</span>
+          <span class="lang-en">Software Engineering</span>
+        </div>
+        <div class="edu-school">Politécnico Grancolombiano</div>
+      </div>
+      <div class="edu-year">2022</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-tag" style="justify-content:center;display:flex;">
+    <span class="lang-es">07 — Contacto</span>
+    <span class="lang-en">07 — Contact</span>
+  </div>
+
+  <h2 class="contact-headline">
+    <span class="lang-es">¿Lideras una organización que necesita <em>tecnología que entregue resultados</em>?</span>
+    <span class="lang-en">Do you lead an organization that needs <em>technology that delivers</em>?</span>
+  </h2>
+
+  <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">
+    <span class="lang-es">Conversemos sobre liderazgo tecnológico, transformación digital o iniciativas de IA aplicada.</span>
+    <span class="lang-en">Let's talk about tech leadership, digital transformation, or applied AI initiatives.</span>
+  </p>
+
+  <div class="contact-channels">
+    <a href="mailto:swith@hotmail.es" class="btn btn-primary">
+      <span class="lang-es">Escríbeme</span>
+      <span class="lang-en">Email me</span>
+      <span class="btn-arrow">→</span>
+    </a>
+    <a href="https://www.linkedin.com/in/swithmerchan-tecnologia" target="_blank" rel="noopener" class="btn">
+      LinkedIn <span class="btn-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 Swith Merchan Díaz · Bogotá, Colombia</div>
+    <div>
+      <span class="lang-es">Construido con intención.</span>
+      <span class="lang-en">Built with intent.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+  });
+  try { localStorage.setItem('preferred-lang', lang); } catch(e) {}
+}
+
+(function() {
+  try {
+    const saved = localStorage.getItem('preferred-lang');
+    if (saved && (saved === 'es' || saved === 'en')) {
+      setLang(saved);
+    }
+  } catch(e) {}
+})();
+
+// Intersection observer for scroll-triggered fade
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(s => {
+  s.classList.add('fade-in');
+  observer.observe(s);
+});
+</script>
+</body>
+</html>
