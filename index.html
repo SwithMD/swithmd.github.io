@@ -1,142 +1,230 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Swith Merchan Díaz — AI Strategy & Tech Leadership</title>
-<meta name="description" content="Consultor de estrategia tecnológica e IA para equipos directivos. 27 años transformando organizaciones en LATAM." />
-<meta property="og:title" content="Swith Merchan Díaz — AI Strategy & Tech Leadership" />
-<meta property="og:description" content="Consultor de estrategia tecnológica e IA para equipos directivos. 27 años transformando organizaciones en LATAM." />
-<meta property="og:type" content="website" />
+<meta name="description" content="Consultor de estrategia tecnológica e IA para equipos directivos. 27 años transformando organizaciones en LATAM."/>
+<meta property="og:title" content="Swith Merchan Díaz — AI Strategy & Tech Leadership"/>
+<meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--white:#ffffff;--off-white:#f8f7f4;--warm-gray:#f0ede8;--border:#e2ddd8;--border-dark:#c8c3bc;--text:#1a1a18;--text-muted:#6b6760;--text-light:#9c9892;--accent:#1a3a5c;--accent-warm:#c4874a;--accent-light:#e8f0f8;--serif:'Lora',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif;--max:1100px;--radius:4px}
+:root{
+  --g50:#f9f9f8;
+  --g100:#f0efed;
+  --g200:#e2e0dc;
+  --g300:#c8c5bf;
+  --g400:#a09c95;
+  --g500:#7a7670;
+  --g600:#5a5751;
+  --g700:#3d3a36;
+  --g800:#252320;
+  --g900:#131210;
+  --navy:#1b2d45;
+  --navy-mid:#243a55;
+  --gold:#c08a3e;
+  --gold-light:#e8c07a;
+  --gold-bg:rgba(192,138,62,0.08);
+  --white:#ffffff;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --max:1100px;
+  --r:4px;
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);background:var(--g50);color:var(--g800);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
-.nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--accent);letter-spacing:-0.01em}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{font-size:0.875rem;color:var(--text-muted);transition:color 0.2s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:10px 22px!important;border-radius:var(--radius)!important;font-weight:500!important;font-size:0.875rem!important;transition:background 0.2s!important}
-.nav-cta:hover{background:#243f5e!important}
-.lang-toggle{display:flex;gap:4px}
-.lang-btn{background:none;border:1px solid var(--border);padding:5px 10px;border-radius:var(--radius);font-size:0.75rem;font-family:var(--sans);cursor:pointer;color:var(--text-muted);transition:all 0.2s}
-.lang-btn.active,.lang-btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(19,18,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--white);letter-spacing:0}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a{font-size:0.82rem;color:rgba(255,255,255,0.55);letter-spacing:0.02em;transition:color var(--transition);font-weight:400}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--gold)!important;color:var(--g900)!important;padding:9px 20px!important;border-radius:var(--r)!important;font-weight:600!important;font-size:0.8rem!important;letter-spacing:0.03em!important;transition:background var(--transition)!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+.lang-toggle{display:flex;gap:3px}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.15);padding:4px 9px;border-radius:var(--r);font-size:0.72rem;font-family:var(--sans);cursor:pointer;color:rgba(255,255,255,0.45);transition:all 0.2s;letter-spacing:0.04em}
+.lang-btn.active,.lang-btn:hover{background:rgba(255,255,255,0.1);color:var(--white);border-color:rgba(255,255,255,0.3)}
+
+/* LANG */
 [data-lang="es"] .lang-en,[data-lang="en"] .lang-es{display:none!important}
-.hero{padding:140px 40px 80px;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:center}
-.hero-eyebrow{font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:2px;background:var(--accent-warm)}
-.hero-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:500;line-height:1.18;color:var(--accent);margin-bottom:28px;letter-spacing:-0.02em}
-.hero-title em{font-style:italic;color:var(--accent-warm)}
-.hero-sub{font-size:1.02rem;color:var(--text-muted);line-height:1.8;margin-bottom:40px;max-width:520px}
-.hero-sub strong{color:var(--text);font-weight:500}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:var(--white);padding:14px 28px;border-radius:var(--radius);font-size:0.925rem;font-weight:500;font-family:var(--sans);cursor:pointer;border:none;transition:background 0.2s;display:inline-block}
-.btn-primary:hover{background:#243f5e}
-.btn-outline{border:1.5px solid var(--border-dark);color:var(--text);padding:14px 28px;border-radius:var(--radius);font-size:0.925rem;font-weight:400;transition:all 0.2s;display:inline-block}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* HERO — dark section */
+.hero-section{background:var(--g900);padding:0}
+.hero{max-width:var(--max);margin:0 auto;padding:130px 40px 90px;display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:center}
+.hero-eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:inline-block;width:32px;height:1px;background:var(--gold)}
+.hero-title{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:500;line-height:1.14;color:var(--white);margin-bottom:26px;letter-spacing:-0.02em}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.58);line-height:1.82;margin-bottom:40px;max-width:500px;font-weight:300}
+.hero-sub strong{color:rgba(255,255,255,0.88);font-weight:500}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--g900);padding:13px 28px;border-radius:var(--r);font-size:0.9rem;font-weight:600;font-family:var(--sans);cursor:pointer;border:none;transition:background var(--transition),transform var(--transition);display:inline-block;letter-spacing:0.02em}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:13px 28px;border-radius:var(--r);font-size:0.9rem;font-weight:400;transition:all var(--transition);display:inline-block}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.5);color:var(--white)}
 .hero-photo-wrap{position:relative}
-.hero-photo-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:6px}
-.hero-photo-badge{position:absolute;bottom:-20px;left:-20px;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:14px 18px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
-.badge-value{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--accent);line-height:1;display:block}
-.badge-label{font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px}
-.stats-bar{background:var(--accent);padding:36px 40px}
-.stats-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.stat-item{text-align:center}
-.stat-value{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--white);line-height:1;margin-bottom:6px}
-.stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);letter-spacing:0.04em}
+.hero-photo-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:6px;filter:grayscale(15%) contrast(1.05)}
+.photo-frame{position:absolute;inset:0;border-radius:6px;border:1px solid rgba(192,138,62,0.25)}
+.hero-photo-badge{position:absolute;bottom:-18px;left:-18px;background:var(--g800);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:14px 18px}
+.badge-value{font-family:var(--serif);font-size:1.55rem;font-weight:500;color:var(--gold-light);line-height:1;display:block}
+.badge-label{font-size:0.7rem;color:rgba(255,255,255,0.45);display:block;margin-top:3px}
+
+/* STATS — mid grey */
+.stats-bar{background:var(--g800);padding:0 40px;border-top:1px solid rgba(255,255,255,0.06)}
+.stats-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:32px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.06)}
+.stat-item:last-child{border-right:none}
+.stat-value{font-family:var(--serif);font-size:1.9rem;font-weight:500;color:var(--white);line-height:1;margin-bottom:5px}
+.stat-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.06em;text-transform:uppercase}
+
+/* SECTION PRIMITIVES */
 section{padding:88px 40px}
 .section-inner{max-width:var(--max);margin:0 auto}
-.section-eyebrow{font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.section-eyebrow::before{content:'';display:inline-block;width:20px;height:2px;background:var(--accent-warm)}
-.section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:500;color:var(--accent);line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px}
-.section-title em{font-style:italic;color:var(--accent-warm)}
-.section-sub{font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:600px;margin-bottom:52px}
+.eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';display:inline-block;width:20px;height:1px}
+.eyebrow-gold{color:var(--gold)}
+.eyebrow-gold::before{background:var(--gold)}
+.eyebrow-light{color:rgba(255,255,255,0.4)}
+.eyebrow-light::before{background:rgba(255,255,255,0.3)}
+.sec-title{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.6rem);font-weight:500;line-height:1.18;letter-spacing:-0.02em;margin-bottom:14px}
+.sec-title em{font-style:italic}
+.sec-sub{font-size:0.975rem;line-height:1.78;max-width:600px;margin-bottom:52px;font-weight:300}
+
+/* ABOUT — light grey */
+.about-section{background:var(--g100)}
+.about-section .sec-title{color:var(--g900)}
+.about-section .sec-title em{color:var(--gold)}
+.about-section .sec-sub{color:var(--g500)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about-text p{font-size:0.975rem;color:var(--text-muted);line-height:1.85;margin-bottom:18px}
-.about-text p strong{color:var(--text);font-weight:500}
-.quote-block{border-left:3px solid var(--accent-warm);padding:16px 24px;background:var(--off-white);border-radius:0 4px 4px 0;margin:24px 0;font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--accent);line-height:1.65}
-.about-credentials{display:flex;flex-direction:column;gap:16px;padding-top:8px}
-.cred-card{background:var(--off-white);border:1px solid var(--border);border-radius:6px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px}
-.cred-icon{width:36px;height:36px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cred-icon svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:1.5}
-.cred-title{font-size:0.875rem;font-weight:500;color:var(--text);margin-bottom:3px}
-.cred-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.5}
-.services-section{background:var(--off-white)}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:30px 26px;transition:box-shadow 0.2s,transform 0.2s}
-.service-card:hover{box-shadow:0 8px 32px rgba(26,58,92,0.08);transform:translateY(-2px)}
-.service-num{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;color:var(--accent-warm);margin-bottom:16px}
-.service-title{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--accent);margin-bottom:12px;line-height:1.3}
-.service-desc{font-size:0.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:20px}
+.about-text p{font-size:0.955rem;color:var(--g600);line-height:1.88;margin-bottom:18px;font-weight:300}
+.about-text p strong{color:var(--g800);font-weight:500}
+.quote-block{border-left:2px solid var(--gold);padding:16px 22px;background:var(--white);margin:28px 0;font-family:var(--serif);font-size:1.02rem;font-style:italic;color:var(--navy);line-height:1.65;border-radius:0 var(--r) var(--r) 0}
+.cred-stack{display:flex;flex-direction:column;gap:14px}
+.cred-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;transition:box-shadow var(--transition)}
+.cred-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07)}
+.cred-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+.cred-title{font-size:0.87rem;font-weight:500;color:var(--g800);margin-bottom:3px}
+.cred-desc{font-size:0.78rem;color:var(--g500);line-height:1.5}
+
+/* SERVICES — dark navy */
+.services-section{background:var(--navy);padding:88px 40px}
+.services-section .sec-title{color:var(--white)}
+.services-section .sec-title em{color:var(--gold-light)}
+.services-section .sec-sub{color:rgba(255,255,255,0.5)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+.service-card{background:rgba(255,255,255,0.03);padding:32px 28px;transition:background var(--transition)}
+.service-card:hover{background:rgba(255,255,255,0.07)}
+.service-num{font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.service-title{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--white);margin-bottom:12px;line-height:1.3}
+.service-desc{font-size:0.85rem;color:rgba(255,255,255,0.52);line-height:1.78;margin-bottom:22px;font-weight:300}
 .service-tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:0.7rem;font-weight:500;background:var(--accent-light);color:var(--accent);padding:4px 10px;border-radius:20px;letter-spacing:0.02em}
-.service-cta{margin-top:40px;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:26px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.service-cta p{font-family:var(--serif);font-size:1.1rem;color:var(--accent);font-style:italic;max-width:500px}
-.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:0}
-.impact-item{background:var(--white);padding:40px 32px;text-align:center}
-.impact-number{font-family:var(--serif);font-size:3rem;font-weight:500;color:var(--accent);line-height:1;margin-bottom:8px}
-.impact-label{font-size:0.875rem;font-weight:500;color:var(--text);margin-bottom:8px}
-.impact-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.55}
-.expertise-section{background:var(--off-white)}
-.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.exp-item{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:22px}
-.exp-title{font-size:0.9rem;font-weight:500;color:var(--accent);margin-bottom:8px}
-.exp-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.65;margin-bottom:12px}
+.tag{font-size:0.68rem;font-weight:500;background:rgba(192,138,62,0.12);color:var(--gold-light);padding:4px 10px;border-radius:20px;letter-spacing:0.03em;border:1px solid rgba(192,138,62,0.2)}
+.service-cta{margin-top:1px;background:rgba(255,255,255,0.03);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.06)}
+.service-cta p{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.72);font-style:italic;max-width:520px}
+
+/* IMPACT — white */
+.impact-section{background:var(--white)}
+.impact-section .sec-title{color:var(--g900)}
+.impact-section .sec-title em{color:var(--gold)}
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.impact-card{background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;transition:transform var(--transition),box-shadow var(--transition)}
+.impact-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.impact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.impact-number{font-family:var(--serif);font-size:3.2rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:8px}
+.impact-label{font-size:0.85rem;font-weight:600;color:var(--g700);margin-bottom:10px;letter-spacing:0.02em}
+.impact-desc{font-size:0.8rem;color:var(--g500);line-height:1.6;font-weight:300}
+
+/* EXPERTISE — g100 */
+.expertise-section{background:var(--g100)}
+.expertise-section .sec-title{color:var(--g900)}
+.expertise-section .sec-title em{color:var(--gold)}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.exp-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:24px;transition:border-color var(--transition)}
+.exp-card:hover{border-color:var(--g300)}
+.exp-num{font-size:0.65rem;font-weight:600;letter-spacing:0.12em;color:var(--gold);margin-bottom:10px}
+.exp-title{font-size:0.9rem;font-weight:600;color:var(--g800);margin-bottom:8px}
+.exp-desc{font-size:0.8rem;color:var(--g500);line-height:1.65;margin-bottom:14px;font-weight:300}
 .exp-tags{display:flex;flex-wrap:wrap;gap:5px}
-.exp-tags .tag{font-size:0.68rem}
+.exp-tag{font-size:0.67rem;font-weight:500;background:var(--g100);color:var(--g600);padding:3px 9px;border-radius:20px;border:1px solid var(--g200)}
+
+/* TIMELINE */
+.timeline-section{background:var(--white)}
+.timeline-section .sec-title{color:var(--g900)}
+.timeline-section .sec-title em{color:var(--gold)}
 .timeline{display:flex;flex-direction:column}
-.tl-item{display:grid;grid-template-columns:160px 1fr;gap:40px;padding:32px 0;border-bottom:1px solid var(--border)}
+.tl-item{display:grid;grid-template-columns:180px 1fr;gap:48px;padding:36px 0;border-bottom:1px solid var(--g100)}
 .tl-item:first-child{padding-top:0}
-.tl-item:last-child{border-bottom:none}
-.tl-period{font-size:0.8rem;color:var(--text-light);padding-top:3px}
-.tl-current{color:var(--accent-warm);font-weight:500}
-.tl-role{font-size:0.975rem;font-weight:500;color:var(--text);margin-bottom:3px}
-.tl-company{font-size:0.83rem;color:var(--accent);margin-bottom:10px}
-.tl-desc{font-size:0.855rem;color:var(--text-muted);line-height:1.7}
-.research-section{background:var(--accent)}
-.research-section .section-eyebrow{color:rgba(255,255,255,0.55)}
-.research-section .section-eyebrow::before{background:rgba(255,255,255,0.3)}
-.research-section .section-title{color:var(--white)}
-.research-section .section-title em{color:#f0c27a}
-.research-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:8px;padding:36px}
-.research-status{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.55);margin-bottom:18px}
-.status-dot{width:8px;height:8px;border-radius:50%;background:#f0c27a;box-shadow:0 0 0 4px rgba(240,194,122,0.18);flex-shrink:0}
-.research-title{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--white);line-height:1.35;margin-bottom:18px}
-.research-title em{color:#f0c27a;font-style:italic}
-.research-desc{font-size:0.9rem;color:rgba(255,255,255,0.68);line-height:1.75;margin-bottom:28px}
-.research-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
-.rs-item{background:rgba(255,255,255,0.04);padding:18px;text-align:center}
-.rs-value{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--white)}
-.rs-label{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:4px}
+.tl-item:last-child{border-bottom:none;padding-bottom:0}
+.tl-left{padding-top:2px}
+.tl-period{font-size:0.78rem;color:var(--g400);font-weight:400;margin-bottom:4px}
+.tl-current{color:var(--gold);font-weight:600}
+.tl-co-tag{display:inline-block;font-size:0.68rem;font-weight:500;background:var(--g100);color:var(--g600);padding:3px 8px;border-radius:20px;letter-spacing:0.03em;border:1px solid var(--g200)}
+.tl-role{font-size:0.975rem;font-weight:600;color:var(--g800);margin-bottom:4px}
+.tl-company{font-size:0.83rem;color:var(--navy);margin-bottom:10px;font-weight:400}
+.tl-desc{font-size:0.855rem;color:var(--g500);line-height:1.75;font-weight:300}
+
+/* RESEARCH — dark */
+.research-section{background:var(--g800)}
+.research-section .sec-title{color:var(--white)}
+.research-section .sec-title em{color:var(--gold-light)}
+.research-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:40px}
+.r-status{display:flex;align-items:center;gap:8px;font-size:0.75rem;color:rgba(255,255,255,0.45);margin-bottom:20px}
+.r-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(192,138,62,0.15);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(192,138,62,0.15)}50%{box-shadow:0 0 0 8px rgba(192,138,62,0.05)}}
+.r-title{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--white);line-height:1.3;margin-bottom:16px}
+.r-title em{color:var(--gold-light);font-style:italic}
+.r-desc{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:32px;font-weight:300}
+.r-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.07);border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+.rs{background:rgba(255,255,255,0.03);padding:20px 16px;text-align:center}
+.rs-val{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--white);margin-bottom:4px}
+.rs-lbl{font-size:0.7rem;color:rgba(255,255,255,0.38);letter-spacing:0.04em}
+
+/* EDUCATION — g50 */
+.edu-section{background:var(--g50)}
+.edu-section .sec-title{color:var(--g900)}
+.edu-section .sec-title em{color:var(--gold)}
 .edu-list{display:flex;flex-direction:column}
-.edu-item{display:flex;justify-content:space-between;align-items:start;gap:20px;padding:26px 0;border-bottom:1px solid var(--border)}
-.edu-item:last-child{border-bottom:none}
-.edu-degree{font-size:0.95rem;font-weight:500;color:var(--text);margin-bottom:4px}
-.edu-school{font-size:0.83rem;color:var(--text-muted)}
-.edu-year{font-size:0.83rem;color:var(--text-light);white-space:nowrap;padding-top:2px}
-.contact-section{background:var(--off-white);text-align:center}
-.contact-section .section-eyebrow{justify-content:center}
-.contact-section .section-eyebrow::before{display:none}
-.contact-section .section-title{margin:0 auto 16px}
-.contact-section .section-sub{margin:0 auto 40px}
-.contact-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-footer{background:var(--accent);padding:26px 40px}
-.footer-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.footer-inner p{font-size:0.8rem;color:rgba(255,255,255,0.5)}
-.fade-in{opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+.edu-item{display:flex;justify-content:space-between;align-items:start;gap:20px;padding:28px 0;border-bottom:1px solid var(--g200)}
+.edu-item:first-child{padding-top:0}
+.edu-item:last-child{border-bottom:none;padding-bottom:0}
+.edu-degree{font-size:0.95rem;font-weight:500;color:var(--g800);margin-bottom:4px}
+.edu-school{font-size:0.82rem;color:var(--g500);font-weight:300}
+.edu-year{font-size:0.82rem;color:var(--g400);white-space:nowrap;padding-top:2px}
+
+/* CONTACT — navy dark */
+.contact-section{background:var(--navy);text-align:center}
+.contact-section .eyebrow{justify-content:center}
+.contact-section .eyebrow::before{display:none}
+.contact-section .sec-title{color:var(--white);margin:0 auto 16px}
+.contact-section .sec-title em{color:var(--gold-light)}
+.contact-section .sec-sub{color:rgba(255,255,255,0.5);margin:0 auto 42px}
+.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-outline-light{border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);padding:13px 28px;border-radius:var(--r);font-size:0.9rem;font-weight:400;transition:all var(--transition);display:inline-block}
+.btn-outline-light:hover{border-color:rgba(255,255,255,0.6);color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--g900);padding:24px 40px;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-inner p{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+
+/* ANIMATE */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding:120px 24px 60px;gap:48px}
-  .hero-photo-wrap{max-width:320px;margin:0 auto}
-  .about-grid,.services-grid,.expertise-grid,.impact-grid,.research-stats{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;padding:110px 24px 64px;gap:48px}
+  .hero-photo-wrap{max-width:300px;margin:0 auto}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .services-grid,.impact-grid,.exp-grid,.r-stats{grid-template-columns:1fr}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .tl-item{grid-template-columns:1fr;gap:6px}
   section{padding:60px 24px}
@@ -148,6 +236,7 @@ footer{background:var(--accent);padding:26px 40px}
 </head>
 <body data-lang="es">
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-logo">Swith Merchan Díaz</div>
@@ -167,10 +256,12 @@ footer{background:var(--accent);padding:26px 40px}
   </div>
 </nav>
 
-<section style="padding:0;background:var(--white);">
+<!-- HERO — dark charcoal -->
+<div class="hero-section">
   <div class="hero">
     <div>
-      <div class="hero-eyebrow"><span class="lang-es">Bogotá, Colombia · Disponible</span><span class="lang-en">Bogotá, Colombia · Available</span></div>
+      <div class="hero-eyebrow lang-es">Bogotá, Colombia · Disponible para conversaciones</div>
+      <div class="hero-eyebrow lang-en">Bogotá, Colombia · Open to conversations</div>
       <h1 class="hero-title">
         <span class="lang-es">Estrategia de IA para líderes que necesitan <em>resultados reales.</em></span>
         <span class="lang-en">AI strategy for leaders who need <em>real results.</em></span>
@@ -180,24 +271,26 @@ footer{background:var(--accent);padding:26px 40px}
         <span class="lang-en">I'm <strong>Swith Merchan</strong>, technology and AI consultant with 27 years transforming organizations across LATAM. I work with leadership teams to make AI a real competitive advantage — not strategic decoration.</span>
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary"><span class="lang-es">Agendar conversación →</span><span class="lang-en">Schedule a call →</span></a>
-        <a href="https://www.linkedin.com/in/swithmerchan-tecnologia" target="_blank" rel="noopener" class="btn-outline">LinkedIn ↗</a>
+        <a href="#contact" class="btn-gold"><span class="lang-es">Agendar conversación →</span><span class="lang-en">Schedule a call →</span></a>
+        <a href="https://www.linkedin.com/in/swithmerchan-tecnologia" target="_blank" rel="noopener" class="btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <img src="portrait.jpg" alt="Swith Merchan Díaz" />
+      <img src="portrait.jpg" alt="Swith Merchan Díaz"/>
+      <div class="photo-frame"></div>
       <div class="hero-photo-badge">
         <span class="badge-value">MSc</span>
         <span class="badge-label"><span class="lang-es">IA & Automatización · UNIR</span><span class="lang-en">AI & Automation · UNIR</span></span>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<div class="stats-bar">
+<!-- STATS — dark grey -->
+<div class="stats-bar reveal">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-value">27<span style="font-size:1rem;opacity:.55"> yr</span></div>
+      <div class="stat-value">27<span style="font-size:.95rem;opacity:.45"> yr</span></div>
       <div class="stat-label"><span class="lang-es">Experiencia</span><span class="lang-en">Experience</span></div>
     </div>
     <div class="stat-item">
@@ -205,22 +298,23 @@ footer{background:var(--accent);padding:26px 40px}
       <div class="stat-label"><span class="lang-es">8 países</span><span class="lang-en">8 countries</span></div>
     </div>
     <div class="stat-item">
-      <div class="stat-value">90<span style="font-size:1rem;opacity:.55">%</span></div>
+      <div class="stat-value">90<span style="font-size:.95rem;opacity:.45">%</span></div>
       <div class="stat-label"><span class="lang-es">Reducción incidencias</span><span class="lang-en">Incident reduction</span></div>
     </div>
     <div class="stat-item">
-      <div class="stat-value">46<span style="font-size:1rem;opacity:.55">%</span></div>
+      <div class="stat-value">46<span style="font-size:.95rem;opacity:.45">%</span></div>
       <div class="stat-label"><span class="lang-es">Ahorro operativo</span><span class="lang-en">Operational savings</span></div>
     </div>
   </div>
 </div>
 
-<section id="about">
+<!-- ABOUT — light grey -->
+<section id="about" class="about-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Sobre mí</span><span class="lang-en">About</span></div>
+    <div class="eyebrow eyebrow-gold"><span class="lang-es">Sobre mí</span><span class="lang-en">About</span></div>
     <div class="about-grid">
       <div class="about-text">
-        <h2 class="section-title">
+        <h2 class="sec-title">
           <span class="lang-es">No implemento tecnología. Diseño las condiciones para que las organizaciones <em>evolucionen.</em></span>
           <span class="lang-en">I don't implement technology. I design the conditions for organizations to <em>evolve.</em></span>
         </h2>
@@ -231,17 +325,18 @@ footer{background:var(--accent);padding:26px 40px}
         <div class="quote-block lang-es">"He liderado proyectos que demuestran exactamente eso: redes que no caen, operaciones que se pagan solas, y automatizaciones que devuelven tiempo a los equipos."</div>
         <div class="quote-block lang-en">"I've led projects that prove exactly that: networks that don't fail, operations that pay for themselves, and automations that give time back to teams."</div>
       </div>
-      <div class="about-credentials">
+      <div class="cred-stack">
         <div class="cred-card">
-          <div class="cred-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="cred-dot"></div>
           <div>
-            <div class="cred-title"><span class="lang-es">27 años de experiencia ejecutiva</span><span class="lang-en">27 years of executive experience</span></div>
-            <div class="cred-desc lang-es">IT Manager · LATAM Lead · AI Analyst. Multinacionales de logística, tecnología e industria.</div>
-            <div class="cred-desc lang-en">IT Manager · LATAM Lead · AI Analyst. Multinationals in logistics, technology, and industry.</div>
+            <div class="cred-title lang-es">27 años de experiencia ejecutiva</div>
+            <div class="cred-title lang-en">27 years of executive experience</div>
+            <div class="cred-desc lang-es">IT Manager · LATAM Lead · AI Analyst en multinacionales de logística, tecnología e industria.</div>
+            <div class="cred-desc lang-en">IT Manager · LATAM Lead · AI Analyst at multinationals in logistics, technology, and industry.</div>
           </div>
         </div>
         <div class="cred-card">
-          <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div class="cred-dot"></div>
           <div>
             <div class="cred-title">MSc Inteligencia Artificial · UNIR España</div>
             <div class="cred-desc lang-es">BERT, NLP, modelos predictivos aplicados a operaciones empresariales.</div>
@@ -249,7 +344,7 @@ footer{background:var(--accent);padding:26px 40px}
           </div>
         </div>
         <div class="cred-card">
-          <div class="cred-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 8v8"/></svg></div>
+          <div class="cred-dot"></div>
           <div>
             <div class="cred-title">INALDE Business School · U. de La Sabana</div>
             <div class="cred-desc lang-es">Estrategia y Sostenibilidad 2025. Creating Shared Value · Propósito organizacional.</div>
@@ -257,7 +352,7 @@ footer{background:var(--accent);padding:26px 40px}
           </div>
         </div>
         <div class="cred-card">
-          <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="cred-dot"></div>
           <div>
             <div class="cred-title lang-es">Cobertura LATAM — 8 países</div>
             <div class="cred-title lang-en">LATAM coverage — 8 countries</div>
@@ -269,22 +364,23 @@ footer{background:var(--accent);padding:26px 40px}
   </div>
 </section>
 
-<section id="services" class="services-section">
+<!-- SERVICES — dark navy -->
+<section id="services" class="services-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Consultoría</span><span class="lang-en">Advisory Services</span></div>
-    <h2 class="section-title">
+    <div class="eyebrow eyebrow-light"><span class="lang-es">Consultoría</span><span class="lang-en">Advisory Services</span></div>
+    <h2 class="sec-title">
       <span class="lang-es">Asesoría para directivos que quieren usar la IA <em>en serio.</em></span>
       <span class="lang-en">Advisory for executives who want to use AI <em>for real.</em></span>
     </h2>
-    <p class="section-sub lang-es">Tres servicios diseñados para organizaciones que saben que la IA importa y necesitan un socio que conozca lo técnico y lo humano.</p>
-    <p class="section-sub lang-en">Three services for organizations that know AI matters and need a partner who understands both the technical and human sides.</p>
+    <p class="sec-sub lang-es">Tres servicios para organizaciones que saben que la IA importa y necesitan un socio que conozca lo técnico y lo humano.</p>
+    <p class="sec-sub lang-en">Three services for organizations that know AI matters and need a partner who understands both the technical and human sides.</p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
         <div class="service-title lang-es">AI Readiness con Propósito</div>
         <div class="service-title lang-en">Purpose-Driven AI Readiness</div>
-        <p class="service-desc lang-es">Diagnóstico de madurez operativa y estratégica para implementar IA de forma sostenible. Evalúo si la organización está lista técnicamente y si su propósito organizacional aguanta el cambio que la IA trae.</p>
-        <p class="service-desc lang-en">Operational and strategic maturity assessment for sustainable AI implementation. I evaluate whether the organization is technically ready and if its organizational purpose can sustain the change AI brings.</p>
+        <p class="service-desc lang-es">Diagnóstico de madurez operativa y estratégica para implementar IA de forma sostenible. Evalúo si la organización está lista técnicamente y si su propósito aguanta el cambio que la IA trae.</p>
+        <p class="service-desc lang-en">Operational and strategic maturity assessment for sustainable AI implementation. I evaluate whether the organization is technically ready and if its purpose can sustain the change AI brings.</p>
         <div class="service-tags">
           <span class="tag lang-es">Diagnóstico AS-IS</span><span class="tag lang-en">AS-IS Diagnosis</span>
           <span class="tag lang-es">Roadmap TO-BE</span><span class="tag lang-en">TO-BE Roadmap</span>
@@ -294,8 +390,8 @@ footer{background:var(--accent);padding:26px 40px}
       <div class="service-card">
         <div class="service-num">02</div>
         <div class="service-title">ESG Tech Audit</div>
-        <p class="service-desc lang-es">Revisión de infraestructura, procesos y gobierno de datos con lente de materialidad ESG. Para empresas que ya reportan o quieren prepararse — conectando tecnología con creación de valor compartido.</p>
-        <p class="service-desc lang-en">Infrastructure, process, and data governance review through an ESG materiality lens. For companies already reporting or preparing to — connecting technology with shared value creation.</p>
+        <p class="service-desc lang-es">Revisión de infraestructura, procesos y gobierno de datos con lente ESG. Para empresas que ya reportan o quieren prepararse — conectando tecnología con valor compartido.</p>
+        <p class="service-desc lang-en">Infrastructure, process, and data governance review through an ESG lens. For companies already reporting or preparing to — connecting technology with shared value creation.</p>
         <div class="service-tags">
           <span class="tag lang-es">Gobierno de datos</span><span class="tag lang-en">Data governance</span>
           <span class="tag lang-es">Materialidad ESG</span><span class="tag lang-en">ESG materiality</span>
@@ -306,8 +402,8 @@ footer{background:var(--accent);padding:26px 40px}
         <div class="service-num">03</div>
         <div class="service-title lang-es">Escalamiento de Modelo Operativo</div>
         <div class="service-title lang-en">Operating Model Scaling</div>
-        <p class="service-desc lang-es">Para organizaciones con un piloto de IA funcionando que quieren replicarlo sin perder calidad ni control. Diseño el modelo de escalamiento: qué centralizar, qué delegar, cómo medir.</p>
-        <p class="service-desc lang-en">For organizations with a working AI pilot that want to scale it without losing quality or control. I design the scaling model: what to centralize, what to delegate, how to measure.</p>
+        <p class="service-desc lang-es">Para organizaciones con un piloto de IA funcionando que quieren replicarlo sin perder calidad. Diseño el modelo: qué centralizar, qué delegar, cómo medir.</p>
+        <p class="service-desc lang-en">For organizations with a working AI pilot that want to scale it without losing quality. I design the model: what to centralize, what to delegate, how to measure.</p>
         <div class="service-tags">
           <span class="tag">RPA + IA</span>
           <span class="tag">LATAM rollout</span>
@@ -318,32 +414,33 @@ footer{background:var(--accent);padding:26px 40px}
     <div class="service-cta">
       <p class="lang-es">"¿Tu organización tiene un reto tecnológico real sin resolver? Trabajo con equipos directivos en proyectos de 4 a 12 semanas. Resultados medibles o no seguimos."</p>
       <p class="lang-en">"Does your organization have a real unsolved technology challenge? I work with leadership teams on 4–12 week engagements. Measurable results or we stop."</p>
-      <a href="#contact" class="btn-primary"><span class="lang-es">Agendar conversación →</span><span class="lang-en">Schedule a call →</span></a>
+      <a href="#contact" class="btn-gold"><span class="lang-es">Agendar conversación →</span><span class="lang-en">Schedule a call →</span></a>
     </div>
   </div>
 </section>
 
-<section id="impact">
+<!-- IMPACT — white -->
+<section id="impact" class="impact-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Impacto medible</span><span class="lang-en">Measurable impact</span></div>
-    <h2 class="section-title" style="margin-bottom:40px;">
+    <div class="eyebrow eyebrow-gold"><span class="lang-es">Impacto medible</span><span class="lang-en">Measurable impact</span></div>
+    <h2 class="sec-title" style="margin-bottom:44px">
       <span class="lang-es"><em>Resultados</em> que hablan por sí solos.</span>
       <span class="lang-en"><em>Results</em> that speak for themselves.</span>
     </h2>
     <div class="impact-grid">
-      <div class="impact-item">
+      <div class="impact-card">
         <div class="impact-number">90%</div>
         <div class="impact-label"><span class="lang-es">Reducción de incidencias</span><span class="lang-en">Incident reduction</span></div>
         <div class="impact-desc lang-es">Rediseño integral de red nacional eliminando caídas de servicio recurrentes.</div>
         <div class="impact-desc lang-en">Full national network redesign eliminating recurring service outages.</div>
       </div>
-      <div class="impact-item">
+      <div class="impact-card">
         <div class="impact-number">46%</div>
         <div class="impact-label"><span class="lang-es">Ahorro operativo</span><span class="lang-en">Operational savings</span></div>
         <div class="impact-desc lang-es">Migración de Data Center a infraestructura corporativa global.</div>
         <div class="impact-desc lang-en">Data Center migration to global corporate infrastructure.</div>
       </div>
-      <div class="impact-item">
+      <div class="impact-card">
         <div class="impact-number">60%</div>
         <div class="impact-label"><span class="lang-es">Tareas manuales eliminadas</span><span class="lang-en">Manual work removed</span></div>
         <div class="impact-desc lang-es">RPA + IA en servicio al cliente con modelos predictivos de fallos.</div>
@@ -353,83 +450,100 @@ footer{background:var(--accent);padding:26px 40px}
   </div>
 </section>
 
-<section id="expertise" class="expertise-section">
+<!-- EXPERTISE — light grey -->
+<section id="expertise" class="expertise-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Especialidades</span><span class="lang-en">Expertise</span></div>
-    <h2 class="section-title">
+    <div class="eyebrow eyebrow-gold"><span class="lang-es">Especialidades</span><span class="lang-en">Expertise</span></div>
+    <h2 class="sec-title">
       <span class="lang-es">Áreas donde opero con <em>profundidad.</em></span>
       <span class="lang-en">Areas where I operate <em>in depth.</em></span>
     </h2>
-    <div class="expertise-grid">
-      <div class="exp-item">
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-num">01</div>
         <div class="exp-title"><span class="lang-es">Infraestructura & Cloud</span><span class="lang-en">Infrastructure & Cloud</span></div>
         <p class="exp-desc lang-es">Redes WAN/LAN, virtualización, migración a nube y arquitectura híbrida.</p>
         <p class="exp-desc lang-en">WAN/LAN networks, virtualization, cloud migration, hybrid architecture.</p>
-        <div class="exp-tags"><span class="tag">Azure</span><span class="tag">M365</span><span class="tag">SD-WAN</span></div>
+        <div class="exp-tags"><span class="exp-tag">Azure</span><span class="exp-tag">M365</span><span class="exp-tag">SD-WAN</span></div>
       </div>
-      <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-num">02</div>
         <div class="exp-title"><span class="lang-es">Ciberseguridad</span><span class="lang-en">Cybersecurity</span></div>
         <p class="exp-desc lang-es">Continuidad operativa, vulnerabilidades, cumplimiento e incidentes.</p>
         <p class="exp-desc lang-en">Business continuity, vulnerability management, compliance, incidents.</p>
-        <div class="exp-tags"><span class="tag">SOC</span><span class="tag">Endpoint</span><span class="tag">ISO 27001</span></div>
+        <div class="exp-tags"><span class="exp-tag">SOC</span><span class="exp-tag">Endpoint</span><span class="exp-tag">ISO 27001</span></div>
       </div>
-      <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-num">03</div>
         <div class="exp-title">RPA & IA Aplicada</div>
         <p class="exp-desc lang-es">Automatización de procesos y modelos de IA para operación, predicción y NLP.</p>
         <p class="exp-desc lang-en">Process automation and AI models for operations, prediction, and NLP.</p>
-        <div class="exp-tags"><span class="tag">UiPath</span><span class="tag">BERT</span><span class="tag">Python</span></div>
+        <div class="exp-tags"><span class="exp-tag">UiPath</span><span class="exp-tag">BERT</span><span class="exp-tag">Python</span></div>
       </div>
-      <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-num">04</div>
         <div class="exp-title"><span class="lang-es">Gobierno de Datos</span><span class="lang-en">Data Governance</span></div>
         <p class="exp-desc lang-es">Arquitectura de datos, ETL, integraciones empresariales y gobierno corporativo.</p>
         <p class="exp-desc lang-en">Data architecture, ETL, enterprise integrations, corporate governance.</p>
-        <div class="exp-tags"><span class="tag">Talend</span><span class="tag">Mulesoft</span><span class="tag">SQL</span></div>
+        <div class="exp-tags"><span class="exp-tag">Talend</span><span class="exp-tag">Mulesoft</span><span class="exp-tag">SQL</span></div>
       </div>
-      <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-num">05</div>
         <div class="exp-title"><span class="lang-es">Estrategia & Liderazgo</span><span class="lang-en">Strategy & Leadership</span></div>
         <p class="exp-desc lang-es">Roadmaps tecnológicos, portafolio, equipos LATAM y articulación con casa matriz.</p>
         <p class="exp-desc lang-en">Tech roadmaps, portfolio management, LATAM teams, HQ articulation.</p>
-        <div class="exp-tags"><span class="tag">OKRs</span><span class="tag">Agile</span><span class="tag">ITIL</span></div>
+        <div class="exp-tags"><span class="exp-tag">OKRs</span><span class="exp-tag">Agile</span><span class="exp-tag">ITIL</span></div>
       </div>
-      <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-num">06</div>
         <div class="exp-title"><span class="lang-es">Gestión de Proveedores</span><span class="lang-en">Vendor Management</span></div>
         <p class="exp-desc lang-es">Negociación, SLAs, scoring estratégico y optimización de portafolio.</p>
         <p class="exp-desc lang-en">Negotiation, SLAs, strategic scoring, portfolio optimization.</p>
-        <div class="exp-tags"><span class="tag">SLA</span><span class="tag">RFP</span><span class="tag">TCO</span></div>
+        <div class="exp-tags"><span class="exp-tag">SLA</span><span class="exp-tag">RFP</span><span class="exp-tag">TCO</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<!-- TIMELINE -->
+<section id="experience" class="timeline-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Trayectoria</span><span class="lang-en">Career</span></div>
-    <h2 class="section-title">
+    <div class="eyebrow eyebrow-gold"><span class="lang-es">Trayectoria</span><span class="lang-en">Career</span></div>
+    <h2 class="sec-title">
       <span class="lang-es">Una construcción de <em>27 años.</em></span>
       <span class="lang-en">A <em>27-year build.</em></span>
     </h2>
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-period">2024 — <span class="tl-current"><span class="lang-es">Actual</span><span class="lang-en">Present</span></span></div>
+        <div class="tl-left">
+          <div class="tl-period">2024 — <span class="tl-current"><span class="lang-es">Actual</span><span class="lang-en">Present</span></span></div>
+          <span class="tl-co-tag lang-es">Logística</span><span class="tl-co-tag lang-en">Logistics</span>
+        </div>
         <div>
           <div class="tl-role">IT Manager Colombia</div>
-          <div class="tl-company">Bergé · <span class="lang-es">Multinacional Logística (España)</span><span class="lang-en">Logistics Multinational (Spain)</span></div>
+          <div class="tl-company">Bergé · <span class="lang-es">Multinacional (España)</span><span class="lang-en">Multinational (Spain)</span></div>
           <p class="tl-desc lang-es">Lidero la estrategia y operación tecnológica nacional articulada con la casa matriz en España. Redes, infraestructura, ciberseguridad, gobierno de datos, automatización y portafolio de proveedores estratégicos.</p>
           <p class="tl-desc lang-en">Lead national tech strategy and operations aligned with HQ in Spain. Networks, infrastructure, cybersecurity, data governance, automation, and strategic vendor portfolio.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2012 — 2024</div>
+        <div class="tl-left">
+          <div class="tl-period">2012 — 2024</div>
+          <span class="tl-co-tag lang-es">Consultoría</span><span class="tl-co-tag lang-en">Consulting</span>
+        </div>
         <div>
           <div class="tl-role lang-es">IT Manager LATAM — Proyecto Vitro</div>
           <div class="tl-role lang-en">IT Manager LATAM — Vitro Account</div>
           <div class="tl-company">Excelia · <span class="lang-es">Consultoría Tecnológica</span><span class="lang-en">Technology Consulting</span></div>
-          <p class="tl-desc lang-es">Field Services LATAM: soporte integral, ciberseguridad de endpoints e incidentes en PLC industriales. Operación en México, Brasil, Colombia, Panamá, Perú, Venezuela, Ecuador y Bolivia.</p>
-          <p class="tl-desc lang-en">LATAM Field Services: integrated support, endpoint security, and PLC industrial incident resolution across Mexico, Brazil, Colombia, Panama, Peru, Venezuela, Ecuador, and Bolivia.</p>
+          <p class="tl-desc lang-es">Field Services LATAM: soporte integral, ciberseguridad de endpoints e incidentes en PLC industriales. México, Brasil, Colombia, Panamá, Perú, Venezuela, Ecuador y Bolivia.</p>
+          <p class="tl-desc lang-en">LATAM Field Services: integrated support, endpoint security, and PLC industrial incident resolution across 8 countries.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2023</div>
+        <div class="tl-left">
+          <div class="tl-period">2023</div>
+          <span class="tl-co-tag">Gov · IA</span>
+        </div>
         <div>
           <div class="tl-role lang-es">Analista de Inteligencia Artificial</div>
           <div class="tl-role lang-en">AI Analyst</div>
@@ -439,7 +553,10 @@ footer{background:var(--accent);padding:26px 40px}
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2009 — 2012</div>
+        <div class="tl-left">
+          <div class="tl-period">2009 — 2012</div>
+          <span class="tl-co-tag">KPN</span>
+        </div>
         <div>
           <div class="tl-role">IT Field Services Manager</div>
           <div class="tl-company">Getronics Colombia · KPN</div>
@@ -451,82 +568,73 @@ footer{background:var(--accent);padding:26px 40px}
   </div>
 </section>
 
-<section id="research" class="research-section">
+<!-- RESEARCH — dark grey -->
+<section id="research" class="research-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Investigación & Política Pública</span><span class="lang-en">Research & Public Policy</span></div>
-    <h2 class="section-title">
+    <div class="eyebrow eyebrow-light"><span class="lang-es">Investigación & Política Pública</span><span class="lang-en">Research & Public Policy</span></div>
+    <h2 class="sec-title">
       <span class="lang-es">Cuando la tecnología sirve al <em>interés público.</em></span>
       <span class="lang-en">When technology serves the <em>public interest.</em></span>
     </h2>
     <div class="research-card">
-      <div class="research-status">
-        <span class="status-dot"></span>
+      <div class="r-status">
+        <span class="r-dot"></span>
         <span class="lang-es">En postulación · Convocatoria 975 — Minciencias</span>
         <span class="lang-en">Under review · Call 975 — MinScience Colombia</span>
       </div>
-      <h3 class="research-title">
+      <h3 class="r-title">
         <span class="lang-es">Framework <em>GDS-Rural</em>: gobierno de datos e IA para salud digital en municipios rurales de Cundinamarca.</span>
         <span class="lang-en">The <em>GDS-Rural</em> framework: data governance and AI for digital health in rural municipalities of Cundinamarca.</span>
       </h3>
-      <p class="research-desc lang-es">Diseño y validación de un framework de gobierno de datos e IA para que instituciones de salud rurales implementen telemedicina sostenible. Articulado con MinSalud, MinTIC, ART y DANE bajo el Decreto 0351 de 2025.</p>
-      <p class="research-desc lang-en">Design and validation of a data governance and AI framework so rural health institutions can deploy sustainable telemedicine. Articulated with MinSalud, MinTIC, ART, and DANE under Decree 0351/2025.</p>
-      <div class="research-stats">
-        <div class="rs-item"><div class="rs-value">170</div><div class="rs-label lang-es">Municipios potenciales</div><div class="rs-label lang-en">Potential municipalities</div></div>
-        <div class="rs-item"><div class="rs-value">15.7×</div><div class="rs-label">ROI</div></div>
-        <div class="rs-item"><div class="rs-value">~91%</div><div class="rs-label lang-es">Reducción costo/consulta</div><div class="rs-label lang-en">Cost/visit reduction</div></div>
-        <div class="rs-item"><div class="rs-value">CC BY-SA</div><div class="rs-label lang-es">Modelo abierto</div><div class="rs-label lang-en">Open model</div></div>
+      <p class="r-desc lang-es">Diseño y validación de un framework de gobierno de datos e IA para que instituciones de salud rurales implementen telemedicina sostenible bajo el Decreto 0351 de 2025. Articulado con MinSalud, MinTIC, ART y DANE.</p>
+      <p class="r-desc lang-en">Design and validation of a data governance and AI framework so rural health institutions can deploy sustainable telemedicine under Decree 0351/2025. Articulated with MinSalud, MinTIC, ART, and DANE.</p>
+      <div class="r-stats">
+        <div class="rs"><div class="rs-val">170</div><div class="rs-lbl lang-es">Municipios potenciales</div><div class="rs-lbl lang-en">Potential municipalities</div></div>
+        <div class="rs"><div class="rs-val">15.7×</div><div class="rs-lbl">ROI</div></div>
+        <div class="rs"><div class="rs-val">~91%</div><div class="rs-lbl lang-es">Reducción costo/consulta</div><div class="rs-lbl lang-en">Cost/visit reduction</div></div>
+        <div class="rs"><div class="rs-val">CC BY-SA</div><div class="rs-lbl lang-es">Modelo abierto</div><div class="rs-lbl lang-en">Open model</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="education">
+<!-- EDUCATION -->
+<section id="education" class="edu-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Formación</span><span class="lang-en">Education</span></div>
-    <h2 class="section-title"><span class="lang-es">Aprendizaje <em>continuo.</em></span><span class="lang-en">Continuous <em>learning.</em></span></h2>
+    <div class="eyebrow eyebrow-gold"><span class="lang-es">Formación</span><span class="lang-en">Education</span></div>
+    <h2 class="sec-title"><span class="lang-es">Aprendizaje <em>continuo.</em></span><span class="lang-en">Continuous <em>learning.</em></span></h2>
     <div class="edu-list">
       <div class="edu-item">
-        <div>
-          <div class="edu-degree lang-es">Magíster en Inteligencia Artificial y Automatización</div>
-          <div class="edu-degree lang-en">MSc Artificial Intelligence & Automation</div>
-          <div class="edu-school">Universidad Internacional de La Rioja · UNIR (España)</div>
-        </div>
+        <div><div class="edu-degree lang-es">Magíster en Inteligencia Artificial y Automatización</div><div class="edu-degree lang-en">MSc Artificial Intelligence & Automation</div><div class="edu-school">Universidad Internacional de La Rioja · UNIR (España)</div></div>
         <div class="edu-year">2024</div>
       </div>
       <div class="edu-item">
-        <div>
-          <div class="edu-degree lang-es">Programa de Estrategia y Sostenibilidad</div>
-          <div class="edu-degree lang-en">Strategy & Sustainability Program</div>
-          <div class="edu-school">INALDE Business School · Universidad de La Sabana</div>
-        </div>
+        <div><div class="edu-degree lang-es">Programa de Estrategia y Sostenibilidad</div><div class="edu-degree lang-en">Strategy & Sustainability Program</div><div class="edu-school">INALDE Business School · Universidad de La Sabana</div></div>
         <div class="edu-year">2025</div>
       </div>
       <div class="edu-item">
-        <div>
-          <div class="edu-degree lang-es">Ingeniería de Software</div>
-          <div class="edu-degree lang-en">Software Engineering</div>
-          <div class="edu-school">Politécnico Grancolombiano</div>
-        </div>
+        <div><div class="edu-degree lang-es">Ingeniería de Software</div><div class="edu-degree lang-en">Software Engineering</div><div class="edu-school">Politécnico Grancolombiano</div></div>
         <div class="edu-year">2022</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact-section">
+<!-- CONTACT — dark navy -->
+<section id="contact" class="contact-section reveal">
   <div class="section-inner">
-    <div class="section-eyebrow"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></div>
-    <h2 class="section-title">
+    <div class="eyebrow eyebrow-light"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></div>
+    <h2 class="sec-title">
       <span class="lang-es">¿Lideras una organización que necesita <em>tecnología con propósito?</em></span>
       <span class="lang-en">Do you lead an organization that needs <em>technology with purpose?</em></span>
     </h2>
-    <p class="section-sub">
+    <p class="sec-sub">
       <span class="lang-es">Conversemos sobre liderazgo tecnológico, transformación digital o iniciativas de IA aplicada. Respondo en menos de 24 horas.</span>
       <span class="lang-en">Let's talk about tech leadership, digital transformation, or applied AI initiatives. I respond in under 24 hours.</span>
     </p>
     <div class="contact-actions">
-      <a href="mailto:swith@hotmail.es" class="btn-primary"><span class="lang-es">Escríbeme →</span><span class="lang-en">Email me →</span></a>
-      <a href="https://www.linkedin.com/in/swithmerchan-tecnologia" target="_blank" rel="noopener" class="btn-outline">LinkedIn ↗</a>
+      <a href="mailto:swith@hotmail.es" class="btn-gold"><span class="lang-es">Escríbeme →</span><span class="lang-en">Email me →</span></a>
+      <a href="https://www.linkedin.com/in/swithmerchan-tecnologia" target="_blank" rel="noopener" class="btn-outline-light">LinkedIn ↗</a>
     </div>
   </div>
 </section>
@@ -539,17 +647,15 @@ footer{background:var(--accent);padding:26px 40px}
 </footer>
 
 <script>
-function setLang(lang){
-  document.body.setAttribute('data-lang',lang);
-  document.documentElement.setAttribute('lang',lang);
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===lang));
-  try{localStorage.setItem('preferred-lang',lang)}catch(e){}
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.documentElement.setAttribute('lang',l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===l));
+  try{localStorage.setItem('preferred-lang',l)}catch(e){}
 }
-(function(){
-  try{const s=localStorage.getItem('preferred-lang');if(s==='es'||s==='en')setLang(s)}catch(e){}
-})();
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
-document.querySelectorAll('section,.stats-bar').forEach(s=>{s.classList.add('fade-in');obs.observe(s)});
+(function(){try{const s=localStorage.getItem('preferred-lang');if(s==='es'||s==='en')setLang(s)}catch(e){}}());
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.07});
+document.querySelectorAll('.reveal,.stats-bar').forEach(el=>{obs.observe(el)});
 </script>
 </body>
 </html>
