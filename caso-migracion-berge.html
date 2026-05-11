@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Caso 01 — Migración de Infraestructura Crítica · Swith Merchan</title>
+<meta name="description" content="Cómo diseñé la migración completa del datacenter y red de Bergé Colombia hacia infraestructura corporativa global, logrando 46% de ahorro operativo y eliminando el riesgo de punto único de falla."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g50:#f9f9f8;--g100:#f0efed;--g200:#e2e0dc;--g300:#c8c5bf;
+  --g400:#a09c95;--g500:#7a7670;--g600:#5a5751;--g700:#3d3a36;
+  --g800:#252320;--g900:#131210;
+  --navy:#1b2d45;--navy-mid:#243a55;
+  --gold:#c08a3e;--gold-light:#e8c07a;--gold-bg:rgba(192,138,62,0.08);
+  --white:#ffffff;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --max:900px;--r:4px;
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--g50);color:var(--g800);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(19,18,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--white)}
+.nav-back{font-size:0.8rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:8px;transition:color var(--transition)}
+.nav-back:hover{color:var(--white)}
+.nav-back::before{content:'←'}
+
+/* HERO */
+.case-hero{background:var(--g900);padding:110px 40px 72px}
+.case-hero-inner{max-width:var(--max);margin:0 auto}
+.case-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.case-tag::before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold)}
+.case-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1.15;color:var(--white);letter-spacing:-0.02em;margin-bottom:20px}
+.case-hero h1 em{font-style:italic;color:var(--gold-light)}
+.case-hero-sub{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.78;max-width:680px;font-weight:300;margin-bottom:40px}
+.case-meta{display:flex;flex-wrap:wrap;gap:24px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.meta-value{font-size:0.9rem;color:rgba(255,255,255,0.8);font-weight:400}
+
+/* RESULTS BAR */
+.results-bar{background:var(--navy);padding:0 40px}
+.results-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+.result-item{padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}
+.result-item:last-child{border-right:none}
+.result-num{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--white);line-height:1;margin-bottom:5px}
+.result-label{font-size:0.7rem;color:rgba(255,255,255,0.42);letter-spacing:0.06em;text-transform:uppercase}
+
+/* CONTENT */
+.case-content{max-width:var(--max);margin:0 auto;padding:72px 40px}
+
+/* SECTION BLOCKS */
+.block{margin-bottom:64px}
+.block-eyebrow{font-size:0.68rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.block-eyebrow::before{content:'';display:inline-block;width:16px;height:1px;background:var(--gold)}
+.block-title{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--g900);line-height:1.2;margin-bottom:20px;letter-spacing:-0.02em}
+.block-title em{font-style:italic;color:var(--gold)}
+.block p{font-size:0.975rem;color:var(--g600);line-height:1.88;margin-bottom:16px;font-weight:300}
+.block p strong{color:var(--g800);font-weight:500}
+.block p:last-child{margin-bottom:0}
+
+/* HIGHLIGHT QUOTE */
+.highlight{background:var(--white);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:20px 28px;margin:28px 0;font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--navy);line-height:1.65}
+
+/* PROBLEM CARDS */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.problem-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:20px 22px;position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(192,138,62,0.3)}
+.problem-num{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px}
+.problem-title{font-size:0.875rem;font-weight:600;color:var(--g800);margin-bottom:6px}
+.problem-desc{font-size:0.8rem;color:var(--g500);line-height:1.6;font-weight:300}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:28px;position:relative}
+.timeline::before{content:'';position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--g200)}
+.tl-step{display:grid;grid-template-columns:40px 1fr;gap:20px;padding-bottom:32px}
+.tl-step:last-child{padding-bottom:0}
+.tl-dot{width:30px;height:30px;border-radius:50%;background:var(--white);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+.tl-dot span{font-size:0.65rem;font-weight:700;color:var(--gold)}
+.tl-content{padding-top:4px}
+.tl-phase{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.tl-title{font-size:0.925rem;font-weight:600;color:var(--g800);margin-bottom:6px}
+.tl-desc{font-size:0.83rem;color:var(--g500);line-height:1.65;font-weight:300}
+
+/* TECH STACK */
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.tech-item{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:16px 18px}
+.tech-category{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--g400);margin-bottom:6px}
+.tech-name{font-size:0.875rem;font-weight:500;color:var(--g800);margin-bottom:4px}
+.tech-desc{font-size:0.75rem;color:var(--g500);font-weight:300;line-height:1.5}
+
+/* RESULTS SECTION */
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.result-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:24px;position:relative;overflow:hidden}
+.result-card.highlight-card{background:var(--navy);border-color:var(--navy)}
+.result-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.result-metric{font-family:var(--serif);font-size:2.2rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:6px}
+.result-card.highlight-card .result-metric{color:var(--gold-light)}
+.result-title{font-size:0.83rem;font-weight:600;color:var(--g700);margin-bottom:6px}
+.result-card.highlight-card .result-title{color:rgba(255,255,255,0.7)}
+.result-detail{font-size:0.78rem;color:var(--g500);line-height:1.55;font-weight:300}
+.result-card.highlight-card .result-detail{color:rgba(255,255,255,0.45)}
+
+/* LEARNINGS */
+.learnings-list{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.learning-item{display:flex;gap:16px;align-items:flex-start}
+.learning-icon{width:32px;height:32px;border-radius:50%;background:var(--gold-bg);border:1px solid rgba(192,138,62,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.learning-icon svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2}
+.learning-text{font-size:0.92rem;color:var(--g600);line-height:1.75;font-weight:300}
+.learning-text strong{color:var(--g800);font-weight:500}
+
+/* CTA */
+.case-cta{background:var(--navy);border-radius:8px;padding:40px;text-align:center;margin-top:64px}
+.cta-title{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--white);margin-bottom:12px}
+.cta-title em{font-style:italic;color:var(--gold-light)}
+.cta-sub{font-size:0.9rem;color:rgba(255,255,255,0.5);margin-bottom:28px;font-weight:300}
+.btn-gold{background:var(--gold);color:var(--g900);padding:13px 28px;border-radius:var(--r);font-size:0.9rem;font-weight:600;font-family:var(--sans);cursor:pointer;border:none;transition:background var(--transition);display:inline-block;letter-spacing:0.02em}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.65);padding:13px 28px;border-radius:var(--r);font-size:0.9rem;display:inline-block;transition:all var(--transition);margin-left:12px}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.5);color:var(--white)}
+
+/* STATUS BADGE */
+.status-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(192,138,62,0.1);border:1px solid rgba(192,138,62,0.2);border-radius:20px;padding:5px 12px;font-size:0.72rem;font-weight:500;color:var(--gold);margin-bottom:28px}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--g200);margin:48px 0}
+
+/* FOOTER */
+footer{background:var(--g900);padding:24px 40px;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-inner p{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.55s ease,transform 0.55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .case-hero{padding:100px 24px 56px}
+  .case-content{padding:52px 24px}
+  .problem-grid,.tech-grid,.results-grid{grid-template-columns:1fr}
+  .results-inner{grid-template-columns:1fr}
+  .nav-inner{padding:0 24px}
+  .case-meta{gap:16px}
+  .btn-ghost{margin-left:0;margin-top:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Swith Merchan Díaz</div>
+    <a href="index.html" class="nav-back">Volver al inicio</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Caso de estudio · 01</div>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      En ejecución · Plan aprobado · Go pendiente
+    </div>
+    <h1>Migración de Infraestructura Crítica y <em>Transformación de Red</em> — Bergé Colombia</h1>
+    <p class="case-hero-sub">Cómo diseñé la migración completa del datacenter y red corporativa de Bergé Colombia hacia infraestructura global, eliminando el riesgo de punto único de falla y proyectando un ahorro operativo del 46%.</p>
+    <div class="case-meta">
+      <div class="meta-item">
+        <span class="meta-label">Cliente</span>
+        <span class="meta-value">Bergé Colombia · Multinacional Logística (España)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Rol</span>
+        <span class="meta-value">IT Manager Colombia — Arquitecto de la solución</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Duración</span>
+        <span class="meta-value">12 meses diseño · 8 meses ejecución proyectada</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Alcance</span>
+        <span class="meta-value">Colombia → España · Todos los centros logísticos</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <div class="results-inner">
+    <div class="result-item">
+      <div class="result-num">46%</div>
+      <div class="result-label">Ahorro operativo proyectado</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">0</div>
+      <div class="result-label">Puntos únicos de falla</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">100%</div>
+      <div class="result-label">Alineación Colombia–España</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="case-content">
+
+  <!-- CONTEXTO -->
+  <div class="block reveal">
+    <div class="block-eyebrow">Contexto</div>
+    <h2 class="block-title">El problema que nadie había <em>visto.</em></h2>
+    <p>Bergé Colombia operaba su infraestructura de servidores y datacenter con CIRION, un proveedor local de hosting y conectividad. Al revisar el contrato y la arquitectura existente en detalle, identifiqué algo crítico que había pasado desapercibido desde el inicio de la operación.</p>
+    <p><strong>No existía un RPD (Recuperación ante Desastres) activo.</strong> Toda la operación colombiana dependía de un único datacenter, sin redundancia real, sin failover automático, sin plan de continuidad probado.</p>
+    <p>Ese riesgo se materializó: una falla interna en la red del datacenter de CIRION dejó la operación colombiana completamente fuera de servicio durante horas. Facturación, logística, comunicaciones — todo detenido.</p>
+
+    <div class="highlight">"Una empresa logística multinacional no puede depender de un solo punto de falla. Ese día quedó claro que el problema no era el proveedor — era la arquitectura."</div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">Problema 01</div>
+        <div class="problem-title">Sin datacenter redundante</div>
+        <div class="problem-desc">CIRION no tenía configurado un datacenter de respaldo activo. Ante cualquier falla, la operación quedaba completamente expuesta.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">Problema 02</div>
+        <div class="problem-title">Red sin estándar corporativo</div>
+        <div class="problem-desc">La electrónica de red local no estaba alineada con los estándares de la casa matriz en España, generando brechas de seguridad y visibilidad.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">Problema 03</div>
+        <div class="problem-title">Costos sin justificación</div>
+        <div class="problem-desc">Los costos operativos del datacenter local no se correspondían con el nivel de servicio recibido ni con los beneficios de escala que ofrecía la infraestructura global.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">Problema 04</div>
+        <div class="problem-title">Isla tecnológica</div>
+        <div class="problem-desc">Colombia operaba como una isla tecnológica desconectada de la plataforma corporativa global, limitando el gobierno, la visibilidad y el control desde España.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROPUESTA -->
+  <div class="block reveal">
+    <div class="block-eyebrow">La propuesta</div>
+    <h2 class="block-title">No un parche. Una <em>transformación.</em></h2>
+    <p>Al presentar el análisis a la casa matriz en España, propuse ir más allá de resolver el problema inmediato. La oportunidad no era contratar un datacenter redundante con CIRION — era migrar toda la infraestructura colombiana a la plataforma corporativa global.</p>
+    <p>La propuesta tenía tres componentes estratégicos integrados:</p>
+
+    <div class="problem-grid" style="margin-top:20px">
+      <div class="problem-card">
+        <div class="problem-num">Componente 01</div>
+        <div class="problem-title">Migración total al datacenter corporativo</div>
+        <div class="problem-desc">Mover todos los servidores, aplicaciones y datos de Colombia a la infraestructura global de Bergé en España, eliminando la dependencia de proveedores locales.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">Componente 02</div>
+        <div class="problem-title">SD-WAN Meraki en todos los centros</div>
+        <div class="problem-desc">Reemplazar la electrónica de red local por solución SD-WAN Meraki alineada con los estándares globales, con visibilidad centralizada y gestión desde España.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">Componente 03</div>
+        <div class="problem-title">RPD y continuidad real</div>
+        <div class="problem-desc">Diseño de plan de recuperación ante desastres con failover probado, incluyendo conectividad satelital como respaldo en centros logísticos remotos.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">Componente 04</div>
+        <div class="problem-title">Ciberseguridad integrada</div>
+        <div class="problem-desc">La migración incluye desde el diseño los controles de seguridad corporativos, eliminando las brechas existentes y alineando Colombia con la postura de seguridad global.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- METODOLOGÍA -->
+  <div class="block reveal">
+    <div class="block-eyebrow">Metodología y proceso</div>
+    <h2 class="block-title">Cómo se diseñó y ejecuta <em>el plan.</em></h2>
+    <p>Un proyecto de esta escala requiere una metodología estructurada que minimice el riesgo operativo durante la transición. El principio rector fue claro: <strong>cero interrupción del negocio durante la migración.</strong></p>
+
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-dot"><span>01</span></div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 1 — Diagnóstico (Mes 1–2)</div>
+          <div class="tl-title">Inventario y análisis AS-IS</div>
+          <div class="tl-desc">Levantamiento completo de infraestructura existente: servidores, aplicaciones, dependencias, contratos, SLAs actuales y brechas de seguridad. Identificación de cargas críticas vs. no críticas para priorizar la secuencia de migración.</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"><span>02</span></div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 2 — Diseño (Mes 2–8)</div>
+          <div class="tl-title">Arquitectura TO-BE y plan detallado</div>
+          <div class="tl-desc">Diseño de la arquitectura destino: topología de red SD-WAN, configuración de seguridad, esquema de conectividad Colombia–España, dimensionamiento de ancho de banda y plan de RPD. Elaboración de RFI y RFP para selección de proveedores con criterios técnicos y financieros objetivos.</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"><span>03</span></div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 3 — Validación (Mes 9–12)</div>
+          <div class="tl-title">Pruebas piloto y demos en sitio</div>
+          <div class="tl-desc">Ejecución de pruebas reales desde Santa Marta utilizando conectividad satelital para validar el modelo de red en condiciones remotas. Demostración de continuidad operativa y failover ante el equipo directivo de España.</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"><span>04</span></div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 4 — Ejecución (8 meses proyectados)</div>
+          <div class="tl-title">Migración en paralelo — sin corte de servicio</div>
+          <div class="tl-desc">Migración gradual comenzando por cargas no críticas, ejecutando en paralelo hasta validar estabilidad, y luego cortando el servicio legacy. Cada centro logístico migra en ventanas de mantenimiento nocturnas con rollback plan documentado.</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"><span>05</span></div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 5 — Estabilización (Post-migración)</div>
+          <div class="tl-title">Monitoreo, ajuste y documentación</div>
+          <div class="tl-desc">Período de estabilización con monitoreo intensivo, ajuste de parámetros de red, validación de todos los SLAs y entrega de documentación técnica completa al equipo de España.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TECNOLOGÍA -->
+  <div class="block reveal">
+    <div class="block-eyebrow">Stack tecnológico</div>
+    <h2 class="block-title">Las herramientas <em>correctas</em> para el problema correcto.</h2>
+    <p>La selección tecnológica no partió de preferencias — partió del análisis de qué resolvía el problema con el menor riesgo operativo y la mejor integración con la infraestructura global existente.</p>
+
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-category">Red</div>
+        <div class="tech-name">Cisco Meraki SD-WAN</div>
+        <div class="tech-desc">Gestión centralizada, visibilidad completa y alineación con estándar corporativo global de Bergé.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-category">Conectividad</div>
+        <div class="tech-name">Antenas Satelitales</div>
+        <div class="tech-desc">Respaldo de conectividad para centros logísticos remotos, validado en prueba piloto Santa Marta.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-category">Infraestructura</div>
+        <div class="tech-name">Datacenter Corporativo España</div>
+        <div class="tech-desc">Migración a plataforma Bergé global con redundancia activa y SLAs corporativos garantizados.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-category">Seguridad</div>
+        <div class="tech-name">Framework ISO 27001</div>
+        <div class="tech-desc">Controles de seguridad alineados con la política corporativa global de información.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-category">Continuidad</div>
+        <div class="tech-name">RPD Activo-Activo</div>
+        <div class="tech-desc">Diseño de recuperación ante desastres con failover automático y tiempo de recuperación documentado.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-category">Gestión</div>
+        <div class="tech-name">RFI / RFP Estructurado</div>
+        <div class="tech-desc">Proceso formal de selección de proveedores con criterios técnicos, financieros y de riesgo objetivos.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RESULTADOS -->
+  <div class="block reveal">
+    <div class="block-eyebrow">Resultados</div>
+    <h2 class="block-title">Lo que este proyecto <em>entrega.</em></h2>
+    <p>Con el plan aprobado y en fase final de validación antes del go de ejecución, los resultados proyectados están sustentados en el análisis de costos y la arquitectura diseñada.</p>
+
+    <div class="results-grid">
+      <div class="result-card highlight-card">
+        <div class="result-metric">46%</div>
+        <div class="result-title">Reducción de costos operativos</div>
+        <div class="result-detail">Al migrar de proveedor local a infraestructura corporativa global, eliminando costos duplicados de hosting, conectividad y soporte.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-metric">0</div>
+        <div class="result-title">Puntos únicos de falla</div>
+        <div class="result-detail">La nueva arquitectura elimina completamente la dependencia de un solo datacenter o proveedor. RPD activo con failover probado.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-metric">100%</div>
+        <div class="result-title">Visibilidad desde casa matriz</div>
+        <div class="result-detail">Por primera vez, el equipo de IT en España tendrá visibilidad y control completo sobre la infraestructura colombiana en tiempo real.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-metric">&lt; 4h</div>
+        <div class="result-title">RTO — Tiempo de recuperación</div>
+        <div class="result-detail">Objetivo de recuperación ante desastres: operación completa restaurada en menos de 4 horas ante cualquier falla mayor.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- APRENDIZAJES -->
+  <div class="block reveal">
+    <div class="block-eyebrow">Lo que este caso demuestra</div>
+    <h2 class="block-title">Por qué este tipo de proyecto <em>importa.</em></h2>
+
+    <div class="learnings-list">
+      <div class="learning-item">
+        <div class="learning-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="learning-text"><strong>Ver el problema estratégico detrás del problema técnico.</strong> La falla del datacenter era el síntoma. El problema real era una arquitectura que nunca se había cuestionado. Identificar eso cambió el alcance de la solución — y su valor.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="learning-text"><strong>Traducir la solución técnica al lenguaje del negocio.</strong> España aprobó el proyecto no porque entendió la arquitectura SD-WAN — sino porque entendió el riesgo operativo y el ahorro proyectado. Saber hablar los dos idiomas es lo que mueve decisiones.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="learning-text"><strong>Diseñar para la operación, no para el papel.</strong> Cada decisión de arquitectura se validó contra la realidad operativa: centros remotos, conectividad intermitente, equipos sin experiencia técnica avanzada. Las pruebas piloto en Santa Marta no fueron un formalismo — fueron la garantía.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="learning-text"><strong>La continuidad del negocio no es un proyecto de IT — es una decisión de negocio.</strong> Proyectos como este no se venden con especificaciones técnicas. Se venden con el costo de no hacerlos: cuánto vale una hora de operación detenida para una empresa logística multinacional.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="case-cta reveal">
+    <div class="cta-title">¿Tu organización tiene un reto tecnológico <em>sin resolver?</em></div>
+    <p class="cta-sub">Conversemos sobre cómo una arquitectura bien diseñada puede reducir riesgo operativo y costos al mismo tiempo.</p>
+    <a href="mailto:swith@hotmail.es" class="btn-gold">Agendar conversación →</a>
+    <a href="index.html#services" class="btn-ghost">Ver servicios</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Swith Merchan Díaz · Bogotá, Colombia</p>
+    <p>← <a href="index.html" style="color:rgba(255,255,255,0.3);transition:color 0.2s" onmouseover="this.style.color='rgba(255,255,255,0.7)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">Volver al inicio</a></p>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
